@@ -76,172 +76,213 @@ class Mapa extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // barradenavegarQZ2 (126:562)
-                  padding: EdgeInsets.fromLTRB(
-                      27.71 * fem, 12 * fem, 27.71 * fem, 12 * fem),
                   width: double.infinity,
-                  height: 64 * fem,
+                  height: 60 * fem,
                   decoration: BoxDecoration(
                     color: Color(0xffffffff),
                   ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        // profilebuttonJPW (126:563)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 4 * fem, 43.11 * fem, 4 * fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(
-                                6.16 * fem, 5 * fem, 6.16 * fem, 5 * fem),
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  'assets/page-1/images/ellipse-9-h1e.png',
-                                ),
-                              ),
-                            ),
-                            child: Center(
-                              // doutilizador4ARi (126:565)
-                              child: SizedBox(
-                                width: 20.53 * fem,
-                                height: 22 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/do-utilizador-4-8GC.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        // botomuraltMi (126:566)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 37.97 * fem, 0 * fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            width: 32.84 * fem,
-                            height: 32 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/boto-mural-HpG.png',
-                              width: 32.84 * fem,
-                              height: 32 * fem,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        // agendamentobotoy8G (126:569)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 37.97 * fem, 0 * fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            width: 41.05 * fem,
-                            height: 40 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/agendamento-boto-oxp.png',
-                              width: 41.05 * fem,
-                              height: 40 * fem,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        // infobotoTp8 (126:572)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 4 * fem, 43.11 * fem, 4 * fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            width: 32.84 * fem,
-                            height: double.infinity,
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  // ellipse12BEL (126:573)
-                                  left: 0 * fem,
-                                  top: 0 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 32 * fem,
-                                      height: 32 * fem,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(16 * fem),
-                                          color: Color(0xffd9d9d9),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          27.71 * fem, 12 * fem, 27.71 * fem, 12 * fem),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Conta()),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 4 * fem, 30 * fem, 4 * fem),
+                                child: TextButton(
+                                  onPressed: null,
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(6.16 * fem,
+                                        5 * fem, 6.16 * fem, 5 * fem),
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.contain,
+                                        image: AssetImage(
+                                            'assets/page-1/images/ellipse-9-PBA.png'),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 20.53 * fem,
+                                        height: 22 * fem,
+                                        child: Image.asset(
+                                          'assets/page-1/images/do-utilizador-4-Mja.png',
+                                          fit: BoxFit.contain,
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
-                                Positioned(
-                                  // info4Uz8 (126:574)
-                                  left: 4 * fem,
-                                  top: 5 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 24 * fem,
-                                      height: 22 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/info-4-kGL.png',
-                                        fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Mural()),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 30 * fem, 0 * fem),
+                                child: TextButton(
+                                  onPressed: null,
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Container(
+                                    width: 32.84 * fem,
+                                    height: 32 * fem,
+                                    child: Image.asset(
+                                      'assets/page-1/images/boto-mural-6GU.png',
+                                      fit: BoxFit.contain,
+                                      width: 32.84 * fem,
+                                      height: 32 * fem,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Agendamento()),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 20 * fem, 0 * fem),
+                                child: TextButton(
+                                  onPressed: null,
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Container(
+                                    width: 41.05 * fem,
+                                    height: 40 * fem,
+                                    child: Image.asset(
+                                      'assets/page-1/images/agendamento-boto.png',
+                                      width: 41.05 * fem,
+                                      height: 40 * fem,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Info()),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 4 * fem, 0 * fem, 4 * fem),
+                                child: TextButton(
+                                  onPressed: null,
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(6.16 * fem,
+                                        5 * fem, 5.29 * fem, 5 * fem),
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.contain,
+                                        image: AssetImage(
+                                            'assets/page-1/images/ellipse-13-Mb2.png'),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 21.39 * fem,
+                                        height: 22 * fem,
+                                        child: Image.asset(
+                                          'assets/page-1/images/info-4-AHa.png',
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Mapa()),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 4 * fem, 0 * fem, 4 * fem),
+                                child: TextButton(
+                                  onPressed: null,
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(6.16 * fem,
+                                        5 * fem, 5.29 * fem, 5 * fem),
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.contain,
+                                        image: AssetImage(
+                                            'assets/page-1/images/ellipse-13-Mb2.png'),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 21.39 * fem,
+                                        height: 22 * fem,
+                                        child: Image.asset(
+                                          'assets/page-1/images/mapas-e-bandeiras-4-orU.png',
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        // gpsbuttonQMz (126:575)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 4 * fem, 0 * fem, 4 * fem),
-                        padding: EdgeInsets.fromLTRB(
-                            6.16 * fem, 5 * fem, 5.29 * fem, 5 * fem),
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              'assets/page-1/images/ellipse-13.png',
-                            ),
-                          ),
-                        ),
-                        child: Center(
-                          // mapasebandeiras4tHA (126:577)
-                          child: SizedBox(
-                            width: 21.39 * fem,
-                            height: 22 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/mapas-e-bandeiras-4-5kp.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ],

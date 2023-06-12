@@ -346,7 +346,12 @@ class Registo extends StatelessWidget {
                             onTap: () {
                               _validateEmail();
                               _validatePassword();
-                              if (_emailValid && _passwordValid) {
+                              if (_emailValid &&
+                                  _passwordValid &&
+                                  nomeController.text.isNotEmpty &&
+                                  moradaController.text.isNotEmpty &&
+                                  codigoPostalController.text.isNotEmpty &&
+                                  localidadeController.text.isNotEmpty) {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -357,54 +362,44 @@ class Registo extends StatelessWidget {
                             child: Container(
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 27 * fem),
-                              child: TextButton(
-                                onPressed: (_emailValid &&
-                                        _passwordValid &&
-                                        nomeController.text.isNotEmpty &&
-                                        moradaController.text.isNotEmpty &&
-                                        codigoPostalController
-                                            .text.isNotEmpty &&
-                                        localidadeController.text.isNotEmpty)
-                                    ? () {}
-                                    : null,
+                              child: /* TextButton(
+                                onPressed: () {},
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 45 * fem,
-                                  decoration: BoxDecoration(
-                                    color: (_emailValid &&
-                                            _passwordValid &&
-                                            nomeController.text.isNotEmpty &&
-                                            moradaController.text.isNotEmpty &&
-                                            codigoPostalController
-                                                .text.isNotEmpty &&
-                                            localidadeController
-                                                .text.isNotEmpty)
-                                        ? Color(0xff03d061)
-                                        : Colors.grey,
-                                    borderRadius:
-                                        BorderRadius.circular(27 * fem),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color(0x3f000000),
-                                        offset: Offset(0 * fem, 0 * fem),
-                                        blurRadius: 2 * fem,
-                                      ),
-                                    ],
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Registar',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Trebuchet MS',
-                                        fontSize: 20 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2575 * ffem / fem,
-                                        color: Color(0xffffffff),
-                                      ),
+                                child:  */
+                                  Container(
+                                width: double.infinity,
+                                height: 45 * fem,
+                                decoration: BoxDecoration(
+                                  color: (_emailValid &&
+                                          _passwordValid &&
+                                          nomeController.text.isNotEmpty &&
+                                          moradaController.text.isNotEmpty &&
+                                          codigoPostalController
+                                              .text.isNotEmpty &&
+                                          localidadeController.text.isNotEmpty)
+                                      ? Color(0xff03d061)
+                                      : Colors.grey,
+                                  borderRadius: BorderRadius.circular(27 * fem),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0x3f000000),
+                                      offset: Offset(0 * fem, 0 * fem),
+                                      blurRadius: 2 * fem,
+                                    ),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Registar',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Trebuchet MS',
+                                      fontSize: 20 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.2575 * ffem / fem,
+                                      color: Color(0xffffffff),
                                     ),
                                   ),
                                 ),
