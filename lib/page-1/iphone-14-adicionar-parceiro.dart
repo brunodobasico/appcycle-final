@@ -4,11 +4,33 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/imports.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
-class AdicionarParceiro extends StatelessWidget {
+class AdicionarParceiro extends StatefulWidget {
+  @override
+  _AdicionarParceiroState createState() => _AdicionarParceiroState();
+}
+
+class _AdicionarParceiroState extends State<AdicionarParceiro> {
   TextEditingController nomeParceiroController = TextEditingController();
   TextEditingController tipoEmpresaController = TextEditingController();
   TextEditingController descricaoController = TextEditingController();
+  File? _image;
+
+  Future<void> _pickImage() async {
+    final imagePicker = ImagePicker();
+    final pickedFile = await imagePicker.getImage(
+      source:
+          ImageSource.gallery, // Ou use ImageSource.camera para tirar uma foto
+    );
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -215,17 +237,24 @@ class AdicionarParceiro extends StatelessWidget {
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Foto',
-                            style: SafeGoogleFont(
-                              'Trebuchet MS',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2575 * ffem / fem,
-                              color: Color(0xffc4c4c4),
-                            ),
-                          ),
+                        child: InkWell(
+                          onTap: _pickImage,
+                          child: _image != null
+                              ? Image.file(
+                                  _image!,
+                                  fit: BoxFit.cover,
+                                )
+                              : Center(
+                                  child: Text(
+                                    'Foto',
+                                    style: TextStyle(
+                                      fontSize: 15 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.2575 * ffem / fem,
+                                      color: Color(0xffc4c4c4),
+                                    ),
+                                  ),
+                                ),
                         ),
                       ),
                       GestureDetector(

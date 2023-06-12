@@ -7,10 +7,30 @@ import 'package:myapp/imports.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-class AdicionarPatrocinador extends StatelessWidget {
+class AdicionarPatrocinador extends StatefulWidget {
+  @override
+  _AdicionarPatrocinadorState createState() => _AdicionarPatrocinadorState();
+}
+
+class _AdicionarPatrocinadorState extends State<AdicionarPatrocinador> {
   TextEditingController nomeParceiroController = TextEditingController();
   TextEditingController tipoEmpresaController = TextEditingController();
   TextEditingController descricaoController = TextEditingController();
+  File? _image;
+
+  Future<void> _pickImage() async {
+    final imagePicker = ImagePicker();
+    final pickedFile = await imagePicker.getImage(
+      source:
+          ImageSource.gallery, // Ou use ImageSource.camera para tirar uma foto
+    );
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -217,29 +237,23 @@ class AdicionarPatrocinador extends StatelessWidget {
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
                         child: InkWell(
-                          onTap: () async {
-                            final imagePicker = ImagePicker();
-                            final pickedFile = await imagePicker.getImage(
-                              source: ImageSource
-                                  .gallery, // Ou use ImageSource.camera para tirar uma foto
-                            );
-                            if (pickedFile != null) {
-                              final image = File(pickedFile.path);
-                              // Use o caminho da imagem para exibi-la ou salvá-la conforme necessário
-                              // Exemplo: você pode usar um Image widget dentro do Container
-                            }
-                          },
-                          child: Center(
-                            child: Text(
-                              'Foto',
-                              style: TextStyle(
-                                fontSize: 15 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: Color(0xffc4c4c4),
-                              ),
-                            ),
-                          ),
+                          onTap: _pickImage,
+                          child: _image != null
+                              ? Image.file(
+                                  _image!,
+                                  fit: BoxFit.cover,
+                                )
+                              : Center(
+                                  child: Text(
+                                    'Foto',
+                                    style: TextStyle(
+                                      fontSize: 15 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.2575 * ffem / fem,
+                                      color: Color(0xffc4c4c4),
+                                    ),
+                                  ),
+                                ),
                         ),
                       ),
                       GestureDetector(

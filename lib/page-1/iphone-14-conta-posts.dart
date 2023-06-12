@@ -4,8 +4,30 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/imports.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
-class Conta extends StatelessWidget {
+class Conta extends StatefulWidget {
+  @override
+  _ContaState createState() => _ContaState();
+}
+
+class _ContaState extends State<Conta> {
+  File? _image;
+
+  Future<void> _pickImage() async {
+    final imagePicker = ImagePicker();
+    final pickedFile = await imagePicker.getImage(
+      source:
+          ImageSource.gallery, // Ou use ImageSource.camera para tirar uma foto
+    );
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -51,26 +73,34 @@ class Conta extends StatelessWidget {
                         left: 115 * fem,
                         top: 178 * fem,
                         child: Align(
-                          child: SizedBox(
-                            width: 158 * fem,
-                            height: 158 * fem,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(79 * fem),
-                                border: Border.all(color: Color(0xffffffff)),
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    'assets/page-1/images/ellipse-6-bg.png',
-                                  ),
+                          child: GestureDetector(
+                            onTap: _pickImage,
+                            child: SizedBox(
+                              width: 158 * fem,
+                              height: 158 * fem,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(79 * fem),
+                                  border: Border.all(color: Color(0xffffffff)),
+                                  image: _image != null
+                                      ? DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: FileImage(_image!),
+                                        )
+                                      : DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            'assets/page-1/images/ellipse-6-bg.png',
+                                          ),
+                                        ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0x26646464),
+                                      offset: Offset(0 * fem, 4 * fem),
+                                      blurRadius: 10 * fem,
+                                    ),
+                                  ],
                                 ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0x26646464),
-                                    offset: Offset(0 * fem, 4 * fem),
-                                    blurRadius: 10 * fem,
-                                  ),
-                                ],
                               ),
                             ),
                           ),
