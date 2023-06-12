@@ -12,6 +12,24 @@ class Registo extends StatelessWidget {
   TextEditingController moradaController = TextEditingController();
   TextEditingController codigoPostalController = TextEditingController();
   TextEditingController localidadeController = TextEditingController();
+  bool _passwordValid = true;
+  bool _emailValid = true;
+
+  void _validatePassword() {
+    final password = passwordController.text;
+    final hasUppercase = password.contains(RegExp(r'[A-Z]'));
+    final hasNumber = password.contains(RegExp(r'[0-9]'));
+    final isValid = hasUppercase && hasNumber;
+    _passwordValid = isValid;
+  }
+
+  void _validateEmail() {
+    final email = emailController.text;
+    final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+    final isValid = emailRegex.hasMatch(email);
+    _emailValid = isValid;
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 392;
@@ -25,7 +43,7 @@ class Registo extends StatelessWidget {
             // iphone14registoKgp (46:95)
             padding: EdgeInsets.fromLTRB(1 * fem, 0 * fem, 0 * fem, 0 * fem),
             width: double.infinity,
-            height: 844 * fem,
+            height: 860 * fem,
             decoration: BoxDecoration(
               border: Border.all(color: Color(0xff000000)),
               color: Color(0xff98ff8f),
@@ -33,7 +51,7 @@ class Registo extends StatelessWidget {
             child: Container(
               // frame462hqn (126:784)
               width: double.infinity,
-              height: 834 * fem,
+              height: 860 * fem,
               child: Stack(
                 children: [
                   Positioned(
@@ -81,7 +99,7 @@ class Registo extends StatelessWidget {
                     top: 259 * fem,
                     child: Container(
                       width: 314 * fem,
-                      height: 367 * fem,
+                      height: 400 * fem,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(9 * fem),
                       ),
@@ -98,6 +116,7 @@ class Registo extends StatelessWidget {
                               color: Color(0xfff8f8f8),
                               borderRadius: BorderRadius.circular(9 * fem),
                             ),
+
                             child: TextField(
                               controller: nomeController,
                               decoration: InputDecoration(
@@ -116,7 +135,6 @@ class Registo extends StatelessWidget {
                             height: 17 * fem,
                           ),
                           Container(
-                            // autogroup6mbzrGk (T2i47eCdNMo46ZJpgi6mbz)
                             padding: EdgeInsets.fromLTRB(
                                 17 * fem, 0 * fem, 17 * fem, 0 * fem),
                             width: double.infinity,
@@ -131,7 +149,12 @@ class Registo extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: 'Email',
                                 border: InputBorder.none,
+                                /* errorText:
+                                    _emailValid ? null : 'Email inválido', */
                               ),
+                              onChanged: (value) {
+                                _validateEmail(); // Chamar a função de validação do email
+                              },
                               style: TextStyle(
                                 fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w400,
@@ -140,13 +163,24 @@ class Registo extends StatelessWidget {
                               ),
                             ),
                           ),
+                          if (!_emailValid)
+                            Text(
+                              'O email é invalido',
+                              style: TextStyle(
+                                color: Colors.red,
+                              ),
+                            ),
                           SizedBox(
                             height: 17 * fem,
                           ),
                           Container(
                             // autogrouphuy6uF2 (T2i4CtYtFGZ4UZrsqzHuy6)
                             padding: EdgeInsets.fromLTRB(
-                                17 * fem, 0 * fem, 17 * fem, 0 * fem),
+                              17 * fem,
+                              0 * fem,
+                              17 * fem,
+                              0 * fem,
+                            ),
                             width: double.infinity,
                             height: 40 * fem,
                             decoration: BoxDecoration(
@@ -160,6 +194,10 @@ class Registo extends StatelessWidget {
                                 hintText: 'Password',
                                 border: InputBorder.none,
                               ),
+                              obscureText: true,
+                              onChanged: (value) {
+                                _validatePassword(); // Chamar a função de validação da senha
+                              },
                               style: TextStyle(
                                 fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w400,
@@ -168,6 +206,13 @@ class Registo extends StatelessWidget {
                               ),
                             ),
                           ),
+                          if (!_passwordValid)
+                            Text(
+                              'A senha deve conter uma letra maiúscula e um número.',
+                              style: TextStyle(
+                                color: Colors.red,
+                              ),
+                            ),
                           SizedBox(
                             height: 17 * fem,
                           ),
@@ -290,7 +335,7 @@ class Registo extends StatelessWidget {
                   Positioned(
                     // botoesZVv (134:797)
                     left: 123 * fem,
-                    top: 706 * fem,
+                    top: 670 * fem,
                     child: Container(
                       width: 145 * fem,
                       height: 117 * fem,
@@ -299,17 +344,29 @@ class Registo extends StatelessWidget {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Login()),
-                              );
+                              _validateEmail();
+                              _validatePassword();
+                              if (_emailValid && _passwordValid) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Login()),
+                                );
+                              }
                             },
                             child: Container(
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 27 * fem),
                               child: TextButton(
-                                onPressed: null,
+                                onPressed: (_emailValid &&
+                                        _passwordValid &&
+                                        nomeController.text.isNotEmpty &&
+                                        moradaController.text.isNotEmpty &&
+                                        codigoPostalController
+                                            .text.isNotEmpty &&
+                                        localidadeController.text.isNotEmpty)
+                                    ? () {}
+                                    : null,
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
@@ -317,7 +374,16 @@ class Registo extends StatelessWidget {
                                   width: double.infinity,
                                   height: 45 * fem,
                                   decoration: BoxDecoration(
-                                    color: Color(0xff03d061),
+                                    color: (_emailValid &&
+                                            _passwordValid &&
+                                            nomeController.text.isNotEmpty &&
+                                            moradaController.text.isNotEmpty &&
+                                            codigoPostalController
+                                                .text.isNotEmpty &&
+                                            localidadeController
+                                                .text.isNotEmpty)
+                                        ? Color(0xff03d061)
+                                        : Colors.grey,
                                     borderRadius:
                                         BorderRadius.circular(27 * fem),
                                     boxShadow: [

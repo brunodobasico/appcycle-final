@@ -8,6 +8,24 @@ import 'package:myapp/imports.dart';
 class Login extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool _passwordValid = true;
+  bool _emailValid = true;
+
+  void _validatePassword() {
+    final password = passwordController.text;
+    final hasUppercase = password.contains(RegExp(r'[A-Z]'));
+    final hasNumber = password.contains(RegExp(r'[0-9]'));
+    final isValid = hasUppercase && hasNumber;
+    _passwordValid = isValid;
+  }
+
+  void _validateEmail() {
+    final email = emailController.text;
+    final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+    final isValid = emailRegex.hasMatch(email);
+    _emailValid = isValid;
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -128,17 +146,29 @@ class Login extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PaginaInicial()),
-                            );
+                            _validateEmail();
+                            _validatePassword();
+                            if (_emailValid &&
+                                _passwordValid &&
+                                emailController.text.isNotEmpty &&
+                                passwordController.text.isNotEmpty) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PaginaInicial()),
+                              );
+                            }
                           },
                           child: Container(
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 0 * fem, 27 * fem),
                             child: TextButton(
-                              onPressed: null,
+                              onPressed: (_emailValid &&
+                                      _passwordValid &&
+                                      emailController.text.isNotEmpty &&
+                                      passwordController.text.isNotEmpty)
+                                  ? () {}
+                                  : null,
                               style: TextButton.styleFrom(
                                 padding: EdgeInsets.zero,
                               ),
@@ -146,7 +176,12 @@ class Login extends StatelessWidget {
                                 width: double.infinity,
                                 height: 45 * fem,
                                 decoration: BoxDecoration(
-                                  color: Color(0xff03d061),
+                                  color: (_emailValid &&
+                                          _passwordValid &&
+                                          emailController.text.isNotEmpty &&
+                                          passwordController.text.isNotEmpty)
+                                      ? Color(0xff03d061)
+                                      : Colors.grey,
                                   borderRadius: BorderRadius.circular(27 * fem),
                                   boxShadow: [
                                     BoxShadow(
@@ -220,7 +255,7 @@ class Login extends StatelessWidget {
                   top: 260 * fem,
                   child: Container(
                     width: 314 * fem,
-                    height: 111 * fem,
+                    height: 150 * fem,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(9 * fem),
                     ),
@@ -252,8 +287,18 @@ class Login extends StatelessWidget {
                               height: 1.2575 * ffem / fem,
                               color: Color.fromARGB(255, 0, 0, 0),
                             ),
+                            onChanged: (value) {
+                              _validateEmail(); // Chamar a função de validação do email
+                            },
                           ),
                         ),
+                        if (!_emailValid)
+                          Text(
+                            'O email é inválido',
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          ),
                         Container(
                           // autogroupqdreZgp (T2i4zXuVkjh9cosfkAQdRE)
                           padding: EdgeInsets.fromLTRB(
@@ -279,8 +324,18 @@ class Login extends StatelessWidget {
                             ),
                             obscureText:
                                 true, // Configura o campo de texto como senha
+                            onChanged: (value) {
+                              _validatePassword(); // Chamar a função de validação da senha
+                            },
                           ),
                         ),
+                        if (!_passwordValid)
+                          Text(
+                            'A senha deve conter uma letra maiúscula e um número.',
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          ),
                       ],
                     ),
                   ),
