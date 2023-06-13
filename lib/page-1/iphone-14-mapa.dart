@@ -64,6 +64,13 @@ class Mapa extends StatelessWidget {
       ),
     );
 
+    _markers.add(
+      Marker(
+        markerId: MarkerId('FreguesiaDeMateus'),
+        position: LatLng(41.30006409681299, -7.7207596628123385),
+        infoWindow: InfoWindow(title: 'Freguesia De Mateus'),
+      ),
+    );
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
