@@ -16,6 +16,8 @@ class _AdicionarPatrocinadorState extends State<AdicionarPatrocinador> {
   TextEditingController nomeParceiroController = TextEditingController();
   TextEditingController tipoEmpresaController = TextEditingController();
   TextEditingController descricaoController = TextEditingController();
+  TextEditingController fotoController = TextEditingController();
+
   File? _image;
 
   Future<void> _pickImage() async {
@@ -237,7 +239,13 @@ class _AdicionarPatrocinadorState extends State<AdicionarPatrocinador> {
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
                         child: InkWell(
-                          onTap: _pickImage,
+                          onTap: () {
+                            _pickImage().then((value) {
+                              if (_image != null) {
+                                fotoController.text = _image!.path;
+                              }
+                            });
+                          },
                           child: _image != null
                               ? Image.file(
                                   _image!,
@@ -258,11 +266,33 @@ class _AdicionarPatrocinadorState extends State<AdicionarPatrocinador> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Patrocinadores()),
-                          );
+                          if (nomeParceiroController.text.isNotEmpty &&
+                              tipoEmpresaController.text.isNotEmpty &&
+                              descricaoController.text.isNotEmpty &&
+                              fotoController.text.isNotEmpty) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Patrocinadores()),
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Falta preencher campos'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
                         },
                         child: Container(
                           // botoadicionarpatrocinadorgDr (97:356)

@@ -362,13 +362,7 @@ class Registo extends StatelessWidget {
                             child: Container(
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 27 * fem),
-                              child: /* TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child:  */
-                                  Container(
+                              child: Container(
                                 width: double.infinity,
                                 height: 45 * fem,
                                 decoration: BoxDecoration(

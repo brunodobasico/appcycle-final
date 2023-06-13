@@ -312,13 +312,34 @@ class AdicionarPonto extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Pontos()),
-                    );
+                    if (nomePontoController.text.isNotEmpty &&
+                        enderecoController.text.isNotEmpty &&
+                        coordenadasController.text.isNotEmpty &&
+                        tiposController.text.isNotEmpty) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Pontos()),
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Text('Falta preencher campos'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text('Fechar'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
                   },
                   child: Container(
-                    // botoadicionarpontoXEU (70:164)
                     margin: EdgeInsets.fromLTRB(
                         0 * fem, 0 * fem, 33 * fem, 31 * fem),
                     width: 209 * fem,

@@ -16,6 +16,7 @@ class _AdicionarParceiroState extends State<AdicionarParceiro> {
   TextEditingController nomeParceiroController = TextEditingController();
   TextEditingController tipoEmpresaController = TextEditingController();
   TextEditingController descricaoController = TextEditingController();
+  TextEditingController fotoController = TextEditingController();
   File? _image;
 
   Future<void> _pickImage() async {
@@ -238,7 +239,13 @@ class _AdicionarParceiroState extends State<AdicionarParceiro> {
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
                         child: InkWell(
-                          onTap: _pickImage,
+                          onTap: () {
+                            _pickImage().then((value) {
+                              if (_image != null) {
+                                fotoController.text = _image!.path;
+                              }
+                            });
+                          },
                           child: _image != null
                               ? Image.file(
                                   _image!,
@@ -259,11 +266,33 @@ class _AdicionarParceiroState extends State<AdicionarParceiro> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Parceiros()),
-                          );
+                          if (nomeParceiroController.text.isNotEmpty &&
+                              tipoEmpresaController.text.isNotEmpty &&
+                              descricaoController.text.isNotEmpty &&
+                              fotoController.text.isNotEmpty) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Parceiros()),
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Falta preencher campos'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
                         },
                         child: Container(
                           // botoadicionarparceiroZfA (70:240)

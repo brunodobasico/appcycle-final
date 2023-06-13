@@ -162,16 +162,6 @@ class Login extends StatelessWidget {
                           child: Container(
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 0 * fem, 27 * fem),
-                            /* child: TextButton(
-                              onPressed: (_emailValid &&
-                                      _passwordValid &&
-                                      emailController.text.isNotEmpty &&
-                                      passwordController.text.isNotEmpty)
-                                  ? () {}
-                                  : null,
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ), */
                             child: Container(
                               width: double.infinity,
                               height: 45 * fem,

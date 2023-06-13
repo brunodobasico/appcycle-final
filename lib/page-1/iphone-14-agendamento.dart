@@ -11,6 +11,12 @@ import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 
 class Agendamento extends StatelessWidget {
   TextEditingController dateController = TextEditingController();
+  TextEditingController tiposController = TextEditingController();
+  TextEditingController nomeController = TextEditingController();
+  TextEditingController parceiroController = TextEditingController();
+  TextEditingController pontoController = TextEditingController();
+  TextEditingController horarioController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -162,7 +168,7 @@ class Agendamento extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(9 * fem),
                                 ),
                                 child: TextField(
-                                  //controller: emailController,
+                                  controller: nomeController,
                                   decoration: InputDecoration(
                                     hintText: 'Nome do residuo',
                                     border: InputBorder.none,
@@ -188,18 +194,80 @@ class Agendamento extends StatelessWidget {
                                   color: Color(0xfff8f8f8),
                                   borderRadius: BorderRadius.circular(9 * fem),
                                 ),
-                                child: TextField(
-                                  //controller: passwordController,
-                                  decoration: InputDecoration(
-                                    hintText: 'Tipo de Residuo',
-                                    border: InputBorder.none,
-                                  ),
-                                  style: TextStyle(
-                                    fontSize: 15 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2575 * ffem / fem,
-                                    color: Color.fromARGB(255, 0, 0, 0),
-                                  ),
+                                child: Builder(
+                                  builder: (BuildContext context) {
+                                    return InkWell(
+                                      onTap: () {
+                                        final RenderBox container = context
+                                            .findRenderObject() as RenderBox;
+                                        final position = RelativeRect.fromRect(
+                                          Rect.fromPoints(
+                                            container
+                                                .localToGlobal(Offset.zero),
+                                            container.localToGlobal(container
+                                                .size
+                                                .bottomRight(Offset.zero)),
+                                          ),
+                                          Offset.zero &
+                                              MediaQuery.of(context).size,
+                                        );
+                                        showMenu(
+                                          context: context,
+                                          position: position,
+                                          items: [
+                                            PopupMenuItem<String>(
+                                              value: 'Organico',
+                                              child: Text('Organico'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Roupas',
+                                              child: Text('Roupas'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value:
+                                                  'Pequenos eletrodomesticos',
+                                              child: Text(
+                                                  'Pequenos eletrodomesticos'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Grandes eletrodomesticos',
+                                              child: Text(
+                                                  'Grandes eletrodomesticos'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Lâmpadas',
+                                              child: Text('Lâmpadas'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Produtos eletrônicos',
+                                              child:
+                                                  Text('Produtos eletrônicos'),
+                                            ),
+                                            // Adicione mais opções conforme necessário
+                                          ],
+                                        ).then((value) {
+                                          if (value != null) {
+                                            tiposController.text = value;
+                                          }
+                                        });
+                                      },
+                                      child: IgnorePointer(
+                                        child: TextField(
+                                          controller: tiposController,
+                                          decoration: InputDecoration(
+                                            hintText: 'Tipo de Residuo',
+                                            border: InputBorder.none,
+                                          ),
+                                          style: TextStyle(
+                                            fontSize: 15 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.2575 * ffem / fem,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                               Container(
@@ -220,6 +288,8 @@ class Agendamento extends StatelessWidget {
                                     hintText: 'Horário de Recolha',
                                     border: InputBorder.none,
                                   ),
+                                  controller:
+                                      horarioController, // Adicione esta linha
                                   onShowPicker: (context, currentValue) async {
                                     final date = await showDatePicker(
                                       context: context,
@@ -253,18 +323,82 @@ class Agendamento extends StatelessWidget {
                                   color: Color(0xfff8f8f8),
                                   borderRadius: BorderRadius.circular(9 * fem),
                                 ),
-                                child: TextField(
-                                  //controller: passwordController,
-                                  decoration: InputDecoration(
-                                    hintText: 'Parceiro de Recolha',
-                                    border: InputBorder.none,
-                                  ),
-                                  style: TextStyle(
-                                    fontSize: 15 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2575 * ffem / fem,
-                                    color: Color.fromARGB(255, 0, 0, 0),
-                                  ),
+                                child: Builder(
+                                  builder: (BuildContext context) {
+                                    return InkWell(
+                                      onTap: () {
+                                        final RenderBox container = context
+                                            .findRenderObject() as RenderBox;
+                                        final position = RelativeRect.fromRect(
+                                          Rect.fromPoints(
+                                            container
+                                                .localToGlobal(Offset.zero),
+                                            container.localToGlobal(container
+                                                .size
+                                                .bottomRight(Offset.zero)),
+                                          ),
+                                          Offset.zero &
+                                              MediaQuery.of(context).size,
+                                        );
+                                        showMenu(
+                                          context: context,
+                                          position: position,
+                                          items: [
+                                            PopupMenuItem<String>(
+                                              value: 'Câmara Municipal',
+                                              child: Text('Câmara Municipal'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'AmbiReal',
+                                              child: Text('AmbiReal'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'ReciReal',
+                                              child: Text('ReciReal'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Resinorte',
+                                              child: Text('Resinorte'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Lefties',
+                                              child: Text('Lefties'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Freguesia de Mateus',
+                                              child:
+                                                  Text('Freguesia de Mateus'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Freguesia de Lordelo',
+                                              child:
+                                                  Text('Freguesia de Lordelo'),
+                                            ),
+                                            // Adicione mais opções conforme necessário
+                                          ],
+                                        ).then((value) {
+                                          if (value != null) {
+                                            parceiroController.text = value;
+                                          }
+                                        });
+                                      },
+                                      child: IgnorePointer(
+                                        child: TextField(
+                                          controller: parceiroController,
+                                          decoration: InputDecoration(
+                                            hintText: 'Parceiro de Recolha',
+                                            border: InputBorder.none,
+                                          ),
+                                          style: TextStyle(
+                                            fontSize: 15 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.2575 * ffem / fem,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                               Container(
@@ -280,18 +414,82 @@ class Agendamento extends StatelessWidget {
                                   color: Color(0xfff8f8f8),
                                   borderRadius: BorderRadius.circular(9 * fem),
                                 ),
-                                child: TextField(
-                                  //controller: passwordController,
-                                  decoration: InputDecoration(
-                                    hintText: 'Ponto de Recolha',
-                                    border: InputBorder.none,
-                                  ),
-                                  style: TextStyle(
-                                    fontSize: 15 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2575 * ffem / fem,
-                                    color: Color.fromARGB(255, 0, 0, 0),
-                                  ),
+                                child: Builder(
+                                  builder: (BuildContext context) {
+                                    return InkWell(
+                                      onTap: () {
+                                        final RenderBox container = context
+                                            .findRenderObject() as RenderBox;
+                                        final position = RelativeRect.fromRect(
+                                          Rect.fromPoints(
+                                            container
+                                                .localToGlobal(Offset.zero),
+                                            container.localToGlobal(container
+                                                .size
+                                                .bottomRight(Offset.zero)),
+                                          ),
+                                          Offset.zero &
+                                              MediaQuery.of(context).size,
+                                        );
+                                        showMenu(
+                                          context: context,
+                                          position: position,
+                                          items: [
+                                            PopupMenuItem<String>(
+                                              value: 'Câmara Municipal',
+                                              child: Text('Câmara Municipal'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'AmbiReal',
+                                              child: Text('AmbiReal'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'ReciReal',
+                                              child: Text('ReciReal'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Resinorte',
+                                              child: Text('Resinorte'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Lefties',
+                                              child: Text('Lefties'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Freguesia de Mateus',
+                                              child:
+                                                  Text('Freguesia de Mateus'),
+                                            ),
+                                            PopupMenuItem<String>(
+                                              value: 'Freguesia de Lordelo',
+                                              child:
+                                                  Text('Freguesia de Lordelo'),
+                                            ),
+                                            // Adicione mais opções conforme necessário
+                                          ],
+                                        ).then((value) {
+                                          if (value != null) {
+                                            pontoController.text = value;
+                                          }
+                                        });
+                                      },
+                                      child: IgnorePointer(
+                                        child: TextField(
+                                          controller: pontoController,
+                                          decoration: InputDecoration(
+                                            hintText: 'Ponto de Recolha',
+                                            border: InputBorder.none,
+                                          ),
+                                          style: TextStyle(
+                                            fontSize: 15 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.2575 * ffem / fem,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             ],
@@ -302,7 +500,6 @@ class Agendamento extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // botocombinarrecolha7Xz (43:176)
                   margin:
                       EdgeInsets.fromLTRB(0 * fem, 0 * fem, 37 * fem, 26 * fem),
                   width: 209 * fem,
@@ -313,10 +510,33 @@ class Agendamento extends StatelessWidget {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Mural()),
-                      );
+                      if (tiposController.text.isNotEmpty &&
+                          nomeController.text.isNotEmpty &&
+                          parceiroController.text.isNotEmpty &&
+                          pontoController.text.isNotEmpty &&
+                          horarioController.text.isNotEmpty) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Mural()),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              content: Text('Falta preencher campos'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Fechar'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }
                     },
                     child: Center(
                       child: Text(

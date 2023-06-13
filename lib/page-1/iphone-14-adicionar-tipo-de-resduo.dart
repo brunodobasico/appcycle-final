@@ -132,10 +132,30 @@ class AdicionarResiduo extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Tipo()),
-                          );
+                          if (tipoResiduoController.text.isNotEmpty) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Tipo()),
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text(
+                                      'O campo Tipo de Resíduo não pode estar vazio.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
                         },
                         child: Container(
                           // botoadicionarresiduohYY (70:198)
