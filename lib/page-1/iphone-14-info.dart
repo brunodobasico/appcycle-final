@@ -55,7 +55,7 @@ class Info extends StatelessWidget {
                                 width: 47.63 * fem,
                                 height: 48 * fem,
                                 child: Image.asset(
-                                  'assets/page-1/images/facebookwhite-jkg.png',
+                                  'assets/page-1/images/facebook.png',
                                   width: 47.63 * fem,
                                   height: 48 * fem,
                                 ),
@@ -71,7 +71,7 @@ class Info extends StatelessWidget {
                                 width: 47.63 * fem,
                                 height: 48 * fem,
                                 child: Image.asset(
-                                  'assets/page-1/images/instagramwhite-4pt.png',
+                                  'assets/page-1/images/instagram.png',
                                   width: 47.63 * fem,
                                   height: 48 * fem,
                                 ),
@@ -90,7 +90,8 @@ class Info extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Conta()),
+                              MaterialPageRoute(
+                                  builder: (context) => PaginaInicial()),
                             );
                           },
                           child: Container(
@@ -126,14 +127,124 @@ class Info extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // rectangle357yN (42:73)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
-                        width: double.infinity,
                         height: 227.55 * fem,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25 * fem),
-                          color: Color(0xfff8f8f8),
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                launch("https://www.cm-vilareal.pt");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/CamaraVR.png'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch(
+                                    "https://www.racius.com/ambireal-gestao-e-valorizacao-de-residuos-lda/");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/AmbiReal.png'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch("https://www.recireal.com");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/ReciReal.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch("https://www.resinorte.pt");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/ResiNorte.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch("https://www.lefties.com/pt");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/Lefties.png'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch("https://jfmateus.org");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/FreguesiaMateus.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch("https://www.viladelordelo.pt");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/FreguesiaLordelo.jpeg'),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Container(
@@ -159,18 +270,6 @@ class Info extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Container(
-                              // pagination3Ek (42:74)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 1.01 * fem, 0 * fem, 0 * fem),
-                              width: 42.76 * fem,
-                              height: 9.15 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/pagination-2MS.png',
-                                width: 42.76 * fem,
-                                height: 9.15 * fem,
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -180,7 +279,7 @@ class Info extends StatelessWidget {
                 Container(
                   // iniciativasXvc (134:837)
                   margin: EdgeInsets.fromLTRB(
-                      22.94 * fem, 0 * fem, 26.93 * fem, 24 * fem),
+                      22.94 * fem, 0 * fem, 26.93 * fem, 84 * fem),
                   padding: EdgeInsets.fromLTRB(
                       13.86 * fem, 12.58 * fem, 9.6 * fem, 12.44 * fem),
                   width: double.infinity,
@@ -225,39 +324,10 @@ class Info extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Container(
-                              // paginationwsr (134:841)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 1.01 * fem, 0 * fem, 0 * fem),
-                              width: 42.65 * fem,
-                              height: 9.15 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/pagination-kRr.png',
-                                width: 42.65 * fem,
-                                height: 9.15 * fem,
-                              ),
-                            ),
                           ],
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Container(
-                  // querofazerparteSpc (42:84)
-                  margin:
-                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 27 * fem),
-                  width: double.infinity,
-                  child: Text(
-                    'Quero fazer parte',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Trebuchet MS',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2575 * ffem / fem,
-                      color: Color(0xff000000),
-                    ),
                   ),
                 ),
                 Container(

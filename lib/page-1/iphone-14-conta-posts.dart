@@ -90,7 +90,7 @@ class _ContaState extends State<Conta> {
                                       : DecorationImage(
                                           fit: BoxFit.cover,
                                           image: AssetImage(
-                                            'assets/page-1/images/ellipse-6-bg.png',
+                                            'assets/page-1/images/foto.jpg',
                                           ),
                                         ),
                                   boxShadow: [
@@ -252,7 +252,7 @@ class _ContaState extends State<Conta> {
                   margin:
                       EdgeInsets.fromLTRB(8 * fem, 0 * fem, 0 * fem, 0 * fem),
                   child: Text(
-                    'Sofia',
+                    'Bruno',
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Ubuntu',

@@ -81,18 +81,6 @@ class PaginaInicial extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      // paginationjnc (33:203)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0.12 * fem, 0 * fem, 0 * fem),
-                                      width: 42.76 * fem,
-                                      height: 9.15 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/pagination-vjv.png',
-                                        width: 42.76 * fem,
-                                        height: 9.15 * fem,
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -150,18 +138,6 @@ class PaginaInicial extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      // paginationVak (33:236)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          2.15 * fem, 0 * fem, 0 * fem),
-                                      width: 42.76 * fem,
-                                      height: 9.15 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/pagination.png',
-                                        width: 42.76 * fem,
-                                        height: 9.15 * fem,
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -183,7 +159,7 @@ class PaginaInicial extends StatelessWidget {
                               width: 47.63 * fem,
                               height: 48 * fem,
                               child: Image.asset(
-                                'assets/page-1/images/facebookwhite.png',
+                                'assets/page-1/images/facebook.png',
                                 width: 47.63 * fem,
                                 height: 48 * fem,
                               ),
@@ -205,7 +181,7 @@ class PaginaInicial extends StatelessWidget {
                               width: 47.63 * fem,
                               height: 48 * fem,
                               child: Image.asset(
-                                'assets/page-1/images/instagramwhite.png',
+                                'assets/page-1/images/instagram.png',
                                 width: 47.63 * fem,
                                 height: 48 * fem,
                               ),
