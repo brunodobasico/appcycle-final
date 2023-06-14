@@ -29,3 +29,4 @@ export 'package:myapp/page-1/recompensas.dart';
 export 'package:myapp/page-1/alterar-nome.dart';
 export 'package:myapp/page-1/alterar-password.dart';
 export 'package:myapp/page-1/esquecer-password.dart';
+export 'package:myapp/page-1/editar-post.dart';

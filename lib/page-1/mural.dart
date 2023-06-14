@@ -139,7 +139,6 @@ class Mural extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    // fotouservaY (75:222)
                                     margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 10 * fem, 0 * fem),
                                     width: 30 * fem,
@@ -147,15 +146,21 @@ class Mural extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.circular(15 * fem),
-                                      color: Color(0xffd9d9d9),
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.circular(15 * fem),
+                                      child: Image.asset(
+                                          'assets/page-1/images/foto1.jpg'),
                                     ),
                                   ),
                                   Container(
                                     // nomedouserEbE (75:223)
                                     margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 71 * fem, 1 * fem),
+                                        0 * fem, 0 * fem, 41 * fem, 1 * fem),
                                     child: Text(
-                                      'Nome do user',
+                                      'João Teixeira',
                                       style: SafeGoogleFont(
                                         'Ubuntu',
                                         fontSize: 13 * ffem,
@@ -170,7 +175,7 @@ class Mural extends StatelessWidget {
                                     margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 0 * fem, 1 * fem),
                                     child: Text(
-                                      'Tipo de Resíduo',
+                                      'Produtos eletrônicos',
                                       style: SafeGoogleFont(
                                         'Ubuntu',
                                         fontSize: 13 * ffem,
@@ -253,7 +258,6 @@ class Mural extends StatelessWidget {
                                             ),
                                           ),
                                           Container(
-                                            // fotoresduoLJp (75:230)
                                             margin: EdgeInsets.fromLTRB(
                                                 124 * fem,
                                                 0 * fem,
@@ -265,16 +269,8 @@ class Mural extends StatelessWidget {
                                               color: Color(0xffd9d9d9),
                                             ),
                                             child: Center(
-                                              child: Text(
-                                                'Foto',
-                                                style: SafeGoogleFont(
-                                                  'Ubuntu',
-                                                  fontSize: 13 * ffem,
-                                                  fontWeight: FontWeight.w700,
-                                                  height: 1.15 * ffem / fem,
-                                                  color: Color(0xff000000),
-                                                ),
-                                              ),
+                                              child: Image.asset(
+                                                  'assets/page-1/images/monitor.jpeg'),
                                             ),
                                           ),
                                         ],
@@ -285,30 +281,51 @@ class Mural extends StatelessWidget {
                                     // botaorecolher1Qx (75:233)
                                     left: 171 * fem,
                                     top: 210 * fem,
-                                    child: Container(
-                                      width: 128 * fem,
-                                      height: 30 * fem,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xff03d061),
-                                        borderRadius:
-                                            BorderRadius.circular(27 * fem),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x3f000000),
-                                            offset: Offset(0 * fem, 0 * fem),
-                                            blurRadius: 2 * fem,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          'Recolher',
-                                          style: SafeGoogleFont(
-                                            'Ubuntu',
-                                            fontSize: 13 * ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.15 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              content: Text(
+                                                  'Vais recolher o produto do utilizador depois envia mensagem privada para combinar horario'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text('OK'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Container(
+                                        width: 128 * fem,
+                                        height: 30 * fem,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff03d061),
+                                          borderRadius:
+                                              BorderRadius.circular(27 * fem),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color(0x3f000000),
+                                              offset: Offset(0 * fem, 0 * fem),
+                                              blurRadius: 2 * fem,
+                                            ),
+                                          ],
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Recolher',
+                                            style: SafeGoogleFont(
+                                              'Ubuntu',
+                                              fontSize: 13 * ffem,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.15 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -337,12 +354,11 @@ class Mural extends StatelessWidget {
                             Container(
                               // autogroupd6i8M7S (T2i5XX1sKSZ6LPX3AaD6i8)
                               margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 10 * fem, 0 * fem),
+                                  0 * fem, 0 * fem, 0 * fem, 0 * fem),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    // fotousertNG (75:78)
                                     margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 10 * fem, 0 * fem),
                                     width: 30 * fem,
@@ -350,15 +366,21 @@ class Mural extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.circular(15 * fem),
-                                      color: Color(0xffd9d9d9),
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.circular(15 * fem),
+                                      child: Image.asset(
+                                          'assets/page-1/images/foto2.jpg'),
                                     ),
                                   ),
                                   Container(
-                                    // nomedouser1St (75:79)
+                                    // nomedouserEbE (75:223)
                                     margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 71 * fem, 1 * fem),
+                                        0 * fem, 0 * fem, 17 * fem, 1 * fem),
                                     child: Text(
-                                      'Nome do user',
+                                      'José Silva',
                                       style: SafeGoogleFont(
                                         'Ubuntu',
                                         fontSize: 13 * ffem,
@@ -369,11 +391,11 @@ class Mural extends StatelessWidget {
                                     ),
                                   ),
                                   Container(
-                                    // tipoderesduovZr (75:80)
+                                    // tipoderesduo9CQ (75:224)
                                     margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 0 * fem, 1 * fem),
                                     child: Text(
-                                      'Tipo de Resíduo',
+                                      'Grandes eletrodomésticos',
                                       style: SafeGoogleFont(
                                         'Ubuntu',
                                         fontSize: 13 * ffem,
@@ -397,8 +419,8 @@ class Mural extends StatelessWidget {
                                     left: 0 * fem,
                                     top: 0 * fem,
                                     child: Container(
-                                      padding: EdgeInsets.fromLTRB(16 * fem,
-                                          20 * fem, 14 * fem, 28 * fem),
+                                      padding: EdgeInsets.fromLTRB(
+                                          0 * fem, 20 * fem, 0 * fem, 28 * fem),
                                       width: 299 * fem,
                                       height: 225 * fem,
                                       decoration: BoxDecoration(
@@ -415,7 +437,7 @@ class Mural extends StatelessWidget {
                                             margin: EdgeInsets.fromLTRB(0 * fem,
                                                 0 * fem, 26 * fem, 6 * fem),
                                             child: Text(
-                                              'Morada: Largo do Pioledo nº50, Vila Real ',
+                                              'Morada: Avenida Cidade de Ourense, Vila Real ',
                                               style: SafeGoogleFont(
                                                 'Ubuntu',
                                                 fontSize: 13 * ffem,
@@ -430,7 +452,7 @@ class Mural extends StatelessWidget {
                                             margin: EdgeInsets.fromLTRB(0 * fem,
                                                 0 * fem, 104 * fem, 4 * fem),
                                             child: Text(
-                                              'Resíduo: Monitor Asus 1995',
+                                              'Resíduo: Maquina de lavar roupa',
                                               style: SafeGoogleFont(
                                                 'Ubuntu',
                                                 fontSize: 13 * ffem,
@@ -443,9 +465,9 @@ class Mural extends StatelessWidget {
                                           Container(
                                             // descriomonitordeixoudefunciona (75:85)
                                             margin: EdgeInsets.fromLTRB(0 * fem,
-                                                0 * fem, 38 * fem, 12 * fem),
+                                                0 * fem, 84 * fem, 12 * fem),
                                             child: Text(
-                                              'Descrição: Monitor deixou de funcionar',
+                                              'Descrição: Maquina muito estragada',
                                               style: SafeGoogleFont(
                                                 'Ubuntu',
                                                 fontSize: 13 * ffem,
@@ -456,7 +478,6 @@ class Mural extends StatelessWidget {
                                             ),
                                           ),
                                           Container(
-                                            // fotoresduorNx (75:86)
                                             margin: EdgeInsets.fromLTRB(
                                                 124 * fem,
                                                 0 * fem,
@@ -468,16 +489,8 @@ class Mural extends StatelessWidget {
                                               color: Color(0xffd9d9d9),
                                             ),
                                             child: Center(
-                                              child: Text(
-                                                'Foto',
-                                                style: SafeGoogleFont(
-                                                  'Ubuntu',
-                                                  fontSize: 13 * ffem,
-                                                  fontWeight: FontWeight.w700,
-                                                  height: 1.15 * ffem / fem,
-                                                  color: Color(0xff000000),
-                                                ),
-                                              ),
+                                              child: Image.asset(
+                                                  'assets/page-1/images/maquina.jpeg'),
                                             ),
                                           ),
                                         ],
@@ -485,33 +498,54 @@ class Mural extends StatelessWidget {
                                     ),
                                   ),
                                   Positioned(
-                                    // botaorecolherXV6 (75:89)
+                                    // botaorecolher1Qx (75:233)
                                     left: 171 * fem,
                                     top: 210 * fem,
-                                    child: Container(
-                                      width: 128 * fem,
-                                      height: 30 * fem,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xff03d061),
-                                        borderRadius:
-                                            BorderRadius.circular(27 * fem),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x3f000000),
-                                            offset: Offset(0 * fem, 0 * fem),
-                                            blurRadius: 2 * fem,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          'Recolher',
-                                          style: SafeGoogleFont(
-                                            'Ubuntu',
-                                            fontSize: 13 * ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.15 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              content: Text(
+                                                  'Vais recolher o produto do utilizador depois envia mensagem privada para combinar horario'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text('OK'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Container(
+                                        width: 128 * fem,
+                                        height: 30 * fem,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff03d061),
+                                          borderRadius:
+                                              BorderRadius.circular(27 * fem),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color(0x3f000000),
+                                              offset: Offset(0 * fem, 0 * fem),
+                                              blurRadius: 2 * fem,
+                                            ),
+                                          ],
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Recolher',
+                                            style: SafeGoogleFont(
+                                              'Ubuntu',
+                                              fontSize: 13 * ffem,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.15 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
                                       ),

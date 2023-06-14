@@ -90,7 +90,7 @@ class _ContaState extends State<Conta> {
                                       : DecorationImage(
                                           fit: BoxFit.cover,
                                           image: AssetImage(
-                                            'assets/page-1/images/foto.jpg',
+                                            'assets/page-1/images/foto1.jpg',
                                           ),
                                         ),
                                   boxShadow: [
@@ -286,31 +286,25 @@ class _ContaState extends State<Conta> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              // autogroup2wqnjQp (T2iZ1tsuKP4FmA5La12wqN)
+                              // autogroupnuqjVoJ (T2iZ84NJKLamfi2UtGNUqJ)
                               margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 176 * fem, 6 * fem),
-                              width: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                  5 * fem, 0 * fem, 0 * fem, 0 * fem),
+                              padding: EdgeInsets.fromLTRB(
+                                  11 * fem, 14 * fem, 11 * fem, 0 * fem),
+                              width: 294 * fem,
+                              decoration: BoxDecoration(
+                                color: Color(0xfff8f8f8),
+                                borderRadius: BorderRadius.circular(25 * fem),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    // ellipse24hz (70:130)
+                                    // moradalargodopioledon50vilarea (70:133)
                                     margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 8 * fem, 0 * fem),
-                                    width: 32 * fem,
-                                    height: 30 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/ellipse-2.png',
-                                      width: 32 * fem,
-                                      height: 30 * fem,
-                                    ),
-                                  ),
-                                  Container(
-                                    // nomedouserypx (70:131)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 1 * fem),
+                                        0 * fem, 0 * fem, 0 * fem, 6 * fem),
                                     child: Text(
-                                      'Nome do user',
+                                      'Morada: Largo do Pioledo nº50, Vila Real ',
                                       style: SafeGoogleFont(
                                         'Ubuntu',
                                         fontSize: 13 * ffem,
@@ -320,9 +314,107 @@ class _ContaState extends State<Conta> {
                                       ),
                                     ),
                                   ),
+                                  Container(
+                                    // resduomonitorasus1995gct (70:134)
+                                    margin: EdgeInsets.fromLTRB(
+                                        0 * fem, 0 * fem, 0 * fem, 6 * fem),
+                                    child: Text(
+                                      'Resíduo: Roupa',
+                                      style: SafeGoogleFont(
+                                        'Ubuntu',
+                                        fontSize: 13 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.15 * ffem / fem,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    // resduomonitorasus1995gct (70:134)
+                                    margin: EdgeInsets.fromLTRB(
+                                        0 * fem, 0 * fem, 0 * fem, 16 * fem),
+                                    child: Text(
+                                      'Descricao: Roupa ja nao serve',
+                                      style: SafeGoogleFont(
+                                        'Ubuntu',
+                                        fontSize: 13 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.15 * ffem / fem,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    // autogroupgrvenR2 (T2iZDUNwmAa9EYUBtdgRVe)
+                                    margin: EdgeInsets.fromLTRB(
+                                        4 * fem, 0 * fem, 43 * fem, 0 * fem),
+                                    width: double.infinity,
+                                    height: 27 * fem,
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      EditarPost()),
+                                            );
+                                          },
+                                          child: Container(
+                                            // botaoeditarukY (75:92)
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 94 * fem, 0 * fem),
+                                            width: 103 * fem,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xff03d061),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      30 * fem),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Editar ',
+                                                style: SafeGoogleFont(
+                                                  'Inter',
+                                                  fontSize: 13 * ffem,
+                                                  fontWeight: FontWeight.w600,
+                                                  height: 1.2125 * ffem / fem,
+                                                  color: Color(0xffffffff),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 35 * fem,
+                      ),
+                      Container(
+                        // post2mJ (70:128)
+                        margin: EdgeInsets.fromLTRB(
+                            30 * fem, 0 * fem, 30 * fem, 0 * fem),
+                        padding: EdgeInsets.fromLTRB(
+                            13 * fem, 12 * fem, 18 * fem, 20 * fem),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          borderRadius: BorderRadius.circular(20 * fem),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Container(
                               // autogroupnuqjVoJ (T2iZ84NJKLamfi2UtGNUqJ)
                               margin: EdgeInsets.fromLTRB(
@@ -355,9 +447,24 @@ class _ContaState extends State<Conta> {
                                   Container(
                                     // resduomonitorasus1995gct (70:134)
                                     margin: EdgeInsets.fromLTRB(
+                                        0 * fem, 0 * fem, 0 * fem, 6 * fem),
+                                    child: Text(
+                                      'Resíduo: Lâmpadas',
+                                      style: SafeGoogleFont(
+                                        'Ubuntu',
+                                        fontSize: 13 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.15 * ffem / fem,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    // resduomonitorasus1995gct (70:134)
+                                    margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 0 * fem, 16 * fem),
                                     child: Text(
-                                      'Resíduo: Monitor Asus 1995',
+                                      'Descricao: Lampadas usadas',
                                       style: SafeGoogleFont(
                                         'Ubuntu',
                                         fontSize: 13 * ffem,
@@ -377,39 +484,39 @@ class _ContaState extends State<Conta> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Container(
-                                          // botaoeditarukY (75:92)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 94 * fem, 0 * fem),
-                                          width: 103 * fem,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xff03d061),
-                                            borderRadius:
-                                                BorderRadius.circular(30 * fem),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'Editar ',
-                                              style: SafeGoogleFont(
-                                                'Inter',
-                                                fontSize: 13 * ffem,
-                                                fontWeight: FontWeight.w600,
-                                                height: 1.2125 * ffem / fem,
-                                                color: Color(0xffffffff),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      EditarPost()),
+                                            );
+                                          },
+                                          child: Container(
+                                            // botaoeditarukY (75:92)
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 94 * fem, 0 * fem),
+                                            width: 103 * fem,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xff03d061),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      30 * fem),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Editar ',
+                                                style: SafeGoogleFont(
+                                                  'Inter',
+                                                  fontSize: 13 * ffem,
+                                                  fontWeight: FontWeight.w600,
+                                                  height: 1.2125 * ffem / fem,
+                                                  color: Color(0xffffffff),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        Text(
-                                          // foton3e (70:135)
-                                          'Foto',
-                                          style: SafeGoogleFont(
-                                            'Ubuntu',
-                                            fontSize: 13 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.15 * ffem / fem,
-                                            color: Color(0xff000000),
                                           ),
                                         ),
                                       ],
@@ -422,160 +529,7 @@ class _ContaState extends State<Conta> {
                         ),
                       ),
                       SizedBox(
-                        height: 35 * fem,
-                      ),
-                      Container(
-                        // posthwJ (33:429)
-                        margin: EdgeInsets.fromLTRB(
-                            30 * fem, 0 * fem, 30 * fem, 0 * fem),
-                        padding: EdgeInsets.fromLTRB(
-                            13 * fem, 12 * fem, 18 * fem, 20 * fem),
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(20 * fem),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              // autogroupcagtcYU (T2iYLuzrWd8n5wgeXMcAGt)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 176 * fem, 6 * fem),
-                              width: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // ellipse2keg (33:431)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 8 * fem, 0 * fem),
-                                    width: 32 * fem,
-                                    height: 30 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/ellipse-2-iEY.png',
-                                      width: 32 * fem,
-                                      height: 30 * fem,
-                                    ),
-                                  ),
-                                  Container(
-                                    // nomedouserfWk (33:432)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                    child: Text(
-                                      'Nome do user',
-                                      style: SafeGoogleFont(
-                                        'Ubuntu',
-                                        fontSize: 13 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.15 * ffem / fem,
-                                        color: Color(0xff000000),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // autogroupptyamZn (T2iYSuprwfRvofk8zXptya)
-                              margin: EdgeInsets.fromLTRB(
-                                  5 * fem, 0 * fem, 0 * fem, 0 * fem),
-                              padding: EdgeInsets.fromLTRB(
-                                  11 * fem, 14 * fem, 11 * fem, 0 * fem),
-                              width: 294 * fem,
-                              decoration: BoxDecoration(
-                                color: Color(0xfff8f8f8),
-                                borderRadius: BorderRadius.circular(25 * fem),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    // moradalargodopioledon50vilarea (33:434)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 6 * fem),
-                                    child: Text(
-                                      'Morada: Largo do Pioledo nº50, Vila Real ',
-                                      style: SafeGoogleFont(
-                                        'Ubuntu',
-                                        fontSize: 13 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.15 * ffem / fem,
-                                        color: Color(0xff000000),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // resduomonitorasus1995Arp (33:435)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 16 * fem),
-                                    child: Text(
-                                      'Resíduo: Monitor Asus 1995',
-                                      style: SafeGoogleFont(
-                                        'Ubuntu',
-                                        fontSize: 13 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.15 * ffem / fem,
-                                        color: Color(0xff000000),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // autogroupnseqt28 (T2iYYfAHXKt2k9y9h5NSEQ)
-                                    margin: EdgeInsets.fromLTRB(
-                                        4 * fem, 0 * fem, 43 * fem, 0 * fem),
-                                    width: double.infinity,
-                                    height: 27 * fem,
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          // botaoeditarcip (75:93)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 94 * fem, 0 * fem),
-                                          width: 103 * fem,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xff03d061),
-                                            borderRadius:
-                                                BorderRadius.circular(30 * fem),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'Editar ',
-                                              style: SafeGoogleFont(
-                                                'Inter',
-                                                fontSize: 13 * ffem,
-                                                fontWeight: FontWeight.w600,
-                                                height: 1.2125 * ffem / fem,
-                                                color: Color(0xffffffff),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Text(
-                                          // fototwE (33:436)
-                                          'Foto',
-                                          style: SafeGoogleFont(
-                                            'Ubuntu',
-                                            fontSize: 13 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.15 * ffem / fem,
-                                            color: Color(0xff000000),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 35 * fem,
+                        height: 75 * fem,
                       ),
                       Container(
                         width: double.infinity,

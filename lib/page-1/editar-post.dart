@@ -7,12 +7,12 @@ import 'package:myapp/imports.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
-class NovoPost extends StatefulWidget {
+class EditarPost extends StatefulWidget {
   @override
-  _NovoPostState createState() => _NovoPostState();
+  _EditarPostState createState() => _EditarPostState();
 }
 
-class _NovoPostState extends State<NovoPost> {
+class _EditarPostState extends State<EditarPost> {
   TextEditingController tiposController = TextEditingController();
   TextEditingController nomeController = TextEditingController();
   TextEditingController moradaController = TextEditingController();
@@ -77,14 +77,14 @@ class _NovoPostState extends State<NovoPost> {
                       ),
                       Positioned(
                         // novopostXoa (69:158)
-                        left: 95 * fem,
+                        left: 75 * fem,
                         top: 54 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 177 * fem,
+                            width: 200 * fem,
                             height: 42 * fem,
                             child: Text(
-                              'Novo Post',
+                              'Editar Post',
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Ubuntu',
@@ -105,8 +105,7 @@ class _NovoPostState extends State<NovoPost> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                  builder: (context) => PaginaInicial()),
+                              MaterialPageRoute(builder: (context) => Conta()),
                             );
                           },
                           child: Container(
@@ -429,7 +428,7 @@ class _NovoPostState extends State<NovoPost> {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      'Adicionar post',
+                                      'Editar post',
                                       style: SafeGoogleFont(
                                         'Inter',
                                         fontSize: 20 * ffem,
