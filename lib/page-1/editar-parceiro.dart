@@ -4,8 +4,34 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/imports.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
-class EditarParceiro extends StatelessWidget {
+class EditarParceiro extends StatefulWidget {
+  @override
+  _EditarParceiroState createState() => _EditarParceiroState();
+}
+
+class _EditarParceiroState extends State<EditarParceiro> {
+  TextEditingController nomeParceiroController = TextEditingController();
+  TextEditingController tipoEmpresaController = TextEditingController();
+  TextEditingController descricaoController = TextEditingController();
+  TextEditingController fotoController = TextEditingController();
+  File? _image;
+
+  Future<void> _pickImage() async {
+    final imagePicker = ImagePicker();
+    final pickedFile = await imagePicker.getImage(
+      source:
+          ImageSource.gallery, // Ou use ImageSource.camera para tirar uma foto
+    );
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -16,7 +42,7 @@ class EditarParceiro extends StatelessWidget {
         child: Container(
           width: double.infinity,
           child: Container(
-            // iphone14editarparceironep (81:243)
+            // iphone14adicionarparceiro8U4 (70:209)
             width: double.infinity,
             decoration: BoxDecoration(
               color: Color(0xff98ff8f),
@@ -25,13 +51,13 @@ class EditarParceiro extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  // autogroupbate7wz (T2iQriJgCU1A5kwM1tbaTE)
+                  // autogroupqrjsFoa (T2iNqBrAnyvwuE9VR9QRjS)
                   width: double.infinity,
                   height: 273 * fem,
                   child: Stack(
                     children: [
                       Positioned(
-                        // rectangle245Tkx (81:244)
+                        // rectangle245Pet (70:210)
                         left: 0 * fem,
                         top: 0 * fem,
                         child: Align(
@@ -47,15 +73,15 @@ class EditarParceiro extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        // editarparceiroa4t (81:245)
-                        left: 63.5 * fem,
+                        // adicionarparceirotLk (70:211)
+                        left: 37.5 * fem,
                         top: 95 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 263 * fem,
+                            width: 315 * fem,
                             height: 42 * fem,
                             child: Text(
-                              'Editar parceiro ',
+                              'Editar parceiro',
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Ubuntu',
@@ -69,12 +95,12 @@ class EditarParceiro extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        // nomedoparceirorHJ (81:266)
+                        // nomedoparceiroLyS (79:87)
                         left: 41 * fem,
                         top: 226 * fem,
                         child: Container(
                           padding: EdgeInsets.fromLTRB(
-                              12 * fem, 15 * fem, 12 * fem, 13 * fem),
+                              12 * fem, 0 * fem, 12 * fem, 0 * fem),
                           width: 312 * fem,
                           height: 47 * fem,
                           decoration: BoxDecoration(
@@ -82,41 +108,54 @@ class EditarParceiro extends StatelessWidget {
                             color: Color(0xfff8f8f8),
                             borderRadius: BorderRadius.circular(9 * fem),
                           ),
-                          child: Text(
-                            'Nome do parceiro',
-                            style: SafeGoogleFont(
-                              'Trebuchet MS',
+                          child: TextField(
+                            controller: nomeParceiroController,
+                            decoration: InputDecoration(
+                              hintText: 'Nome do Parceiro',
+                              border: InputBorder.none,
+                            ),
+                            style: TextStyle(
                               fontSize: 15 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575 * ffem / fem,
-                              color: Color(0xffc4c4c4),
+                              color: Color.fromARGB(255, 0, 0, 0),
                             ),
                           ),
                         ),
                       ),
                       Positioned(
-                        // logogn8 (81:281)
+                        // logowyE (80:111)
                         left: 291 * fem,
                         top: 10 * fem,
-                        child: Container(
-                          width: 80 * fem,
-                          height: 80 * fem,
-                          decoration: BoxDecoration(
-                            color: Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(40 * fem),
-                          ),
-                          child: Center(
-                            // logoQCL (81:283)
-                            child: SizedBox(
-                              width: double.infinity,
-                              height: 80 * fem,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40 * fem),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                      'assets/page-1/images/logo-bg-a2G.png',
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Parceiros()),
+                            );
+                          },
+                          child: Container(
+                            width: 80 * fem,
+                            height: 80 * fem,
+                            decoration: BoxDecoration(
+                              color: Color(0xffffffff),
+                              borderRadius: BorderRadius.circular(40 * fem),
+                            ),
+                            child: Center(
+                              // logoqoi (80:113)
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 80 * fem,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.circular(40 * fem),
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        'assets/page-1/images/logo-bg-K4x.png',
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -129,62 +168,69 @@ class EditarParceiro extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // autogrouptmsj7sS (T2iRD7tLitjQSuXnCCTMsJ)
+                  // autogrouprtg8wLx (T2iP6r4k9FbHSqrpySRTg8)
                   padding: EdgeInsets.fromLTRB(
-                      37 * fem, 19 * fem, 8 * fem, 17 * fem),
+                      37 * fem, 19 * fem, 8 * fem, 12 * fem),
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // tipodeempresaRt8 (81:269)
+                        // tipodeempresaSHi (79:88)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 25 * fem, 18 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            12 * fem, 15 * fem, 12 * fem, 13 * fem),
+                            12 * fem, 0 * fem, 12 * fem, 0 * fem),
                         width: 312 * fem,
                         decoration: BoxDecoration(
                           border: Border.all(color: Color(0xffccc9c9)),
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Text(
-                          'Tipo de empresa',
-                          style: SafeGoogleFont(
-                            'Trebuchet MS',
+                        child: TextField(
+                          controller: tipoEmpresaController,
+                          decoration: InputDecoration(
+                            hintText: 'Tipo de Empresa',
+                            border: InputBorder.none,
+                          ),
+                          style: TextStyle(
                             fontSize: 15 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575 * ffem / fem,
-                            color: Color(0xffc4c4c4),
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
                       Container(
-                        // autogroup12a8Gdr (T2iR6njZA1yXMXgz2r12a8)
+                        // autogroupwkhaLXN (T2iPvVN2TjVkpzZT2fwkhA)
                         margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 33 * fem, 15 * fem),
+                            0 * fem, 0 * fem, 35 * fem, 11 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            16 * fem, 74 * fem, 16 * fem, 53 * fem),
-                        width: 312 * fem,
+                            10 * fem, 0 * fem, 10 * fem, 0 * fem),
+                        width: double.infinity,
+                        height: 146 * fem,
                         decoration: BoxDecoration(
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(10 * fem),
                         ),
-                        child: Text(
-                          'Descrição',
-                          style: SafeGoogleFont(
-                            'Trebuchet MS',
+                        child: TextField(
+                          controller: descricaoController,
+                          decoration: InputDecoration(
+                            hintText: 'Descricao',
+                            border: InputBorder.none,
+                          ),
+                          style: TextStyle(
                             fontSize: 15 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575 * ffem / fem,
-                            color: Color(0xffc4c4c4),
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
                       Container(
-                        // fotoKc8 (81:276)
+                        // fotoHxY (79:90)
                         margin: EdgeInsets.fromLTRB(
-                            97 * fem, 0 * fem, 126 * fem, 80 * fem),
+                            97 * fem, 0 * fem, 126 * fem, 85 * fem),
                         width: double.infinity,
                         height: 122 * fem,
                         decoration: BoxDecoration(
@@ -192,38 +238,82 @@ class EditarParceiro extends StatelessWidget {
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Foto',
-                            style: SafeGoogleFont(
-                              'Trebuchet MS',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2575 * ffem / fem,
-                              color: Color(0xffc4c4c4),
-                            ),
-                          ),
+                        child: InkWell(
+                          onTap: () {
+                            _pickImage().then((value) {
+                              if (_image != null) {
+                                fotoController.text = _image!.path;
+                              }
+                            });
+                          },
+                          child: _image != null
+                              ? Image.file(
+                                  _image!,
+                                  fit: BoxFit.cover,
+                                )
+                              : Center(
+                                  child: Text(
+                                    'Foto',
+                                    style: TextStyle(
+                                      fontSize: 15 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.2575 * ffem / fem,
+                                      color: Color(0xffc4c4c4),
+                                    ),
+                                  ),
+                                ),
                         ),
                       ),
-                      Container(
-                        // botoadicionarparceiroQda (81:263)
-                        margin: EdgeInsets.fromLTRB(
-                            136 * fem, 0 * fem, 0 * fem, 0 * fem),
-                        width: 209 * fem,
-                        height: 43 * fem,
-                        decoration: BoxDecoration(
-                          color: Color(0xff03d061),
-                          borderRadius: BorderRadius.circular(30 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Editar parceiro',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 20 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: Color(0xffffffff),
+                      GestureDetector(
+                        onTap: () {
+                          if (nomeParceiroController.text.isNotEmpty &&
+                              tipoEmpresaController.text.isNotEmpty &&
+                              descricaoController.text.isNotEmpty &&
+                              fotoController.text.isNotEmpty) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Parceiros()),
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Falta preencher campos'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                        },
+                        child: Container(
+                          // botoadicionarparceiroZfA (70:240)
+                          margin: EdgeInsets.fromLTRB(
+                              136 * fem, 0 * fem, 0 * fem, 0 * fem),
+                          width: 209 * fem,
+                          height: 43 * fem,
+                          decoration: BoxDecoration(
+                            color: Color(0xff03d061),
+                            borderRadius: BorderRadius.circular(30 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Editar parceiro',
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),

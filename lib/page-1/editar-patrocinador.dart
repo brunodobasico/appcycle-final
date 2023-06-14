@@ -4,8 +4,35 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/imports.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
-class EditarPatrocinador extends StatelessWidget {
+class EditarPatrocinador extends StatefulWidget {
+  @override
+  _EditarPatrocinadorState createState() => _EditarPatrocinadorState();
+}
+
+class _EditarPatrocinadorState extends State<EditarPatrocinador> {
+  TextEditingController nomeParceiroController = TextEditingController();
+  TextEditingController tipoEmpresaController = TextEditingController();
+  TextEditingController descricaoController = TextEditingController();
+  TextEditingController fotoController = TextEditingController();
+
+  File? _image;
+
+  Future<void> _pickImage() async {
+    final imagePicker = ImagePicker();
+    final pickedFile = await imagePicker.getImage(
+      source:
+          ImageSource.gallery, // Ou use ImageSource.camera para tirar uma foto
+    );
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -16,7 +43,7 @@ class EditarPatrocinador extends StatelessWidget {
         child: Container(
           width: double.infinity,
           child: Container(
-            // iphone14editarpatrocinadorSap (97:291)
+            // iphone14adicionarpatrocinador5 (97:336)
             width: double.infinity,
             decoration: BoxDecoration(
               color: Color(0xff98ff8f),
@@ -25,13 +52,13 @@ class EditarPatrocinador extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  // autogroupujunaBE (T2iSDRYXN7PFmuEAR5Ujun)
+                  // autogroupm3gxJdJ (T2iPnQm9wDpYGwsJUtm3Gx)
                   width: double.infinity,
                   height: 273 * fem,
                   child: Stack(
                     children: [
                       Positioned(
-                        // rectangle245iYL (97:292)
+                        // rectangle245TFJ (97:337)
                         left: 0 * fem,
                         top: 0 * fem,
                         child: Align(
@@ -47,15 +74,15 @@ class EditarPatrocinador extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        // editarpatrocinadorqcx (97:293)
-                        left: 29.5523529053 * fem,
+                        // adicionarpatrocinadorZ3S (97:338)
+                        left: 83 * fem,
                         top: 95 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 336 * fem,
-                            height: 42 * fem,
+                            width: 223 * fem,
+                            height: 83 * fem,
                             child: Text(
-                              'Editar patrocinador',
+                              'Editar\npatrocinador',
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Ubuntu',
@@ -69,12 +96,12 @@ class EditarPatrocinador extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        // nomedoparceirouMv (97:314)
+                        // nomedoparceiroQTN (97:359)
                         left: 41 * fem,
                         top: 226 * fem,
                         child: Container(
                           padding: EdgeInsets.fromLTRB(
-                              12 * fem, 15 * fem, 12 * fem, 13 * fem),
+                              12 * fem, 0 * fem, 12 * fem, 0 * fem),
                           width: 312 * fem,
                           height: 47 * fem,
                           decoration: BoxDecoration(
@@ -82,41 +109,54 @@ class EditarPatrocinador extends StatelessWidget {
                             color: Color(0xfff8f8f8),
                             borderRadius: BorderRadius.circular(9 * fem),
                           ),
-                          child: Text(
-                            'Nome do parceiro',
-                            style: SafeGoogleFont(
-                              'Trebuchet MS',
+                          child: TextField(
+                            controller: nomeParceiroController,
+                            decoration: InputDecoration(
+                              hintText: 'Nome do parceiro',
+                              border: InputBorder.none,
+                            ),
+                            style: TextStyle(
                               fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w400,
                               height: 1.2575 * ffem / fem,
-                              color: Color(0xffc4c4c4),
+                              color: Color.fromARGB(255, 0, 0, 0),
                             ),
                           ),
                         ),
                       ),
                       Positioned(
-                        // logovnp (97:329)
+                        // logoamA (97:374)
                         left: 291 * fem,
                         top: 10 * fem,
-                        child: Container(
-                          width: 80 * fem,
-                          height: 80 * fem,
-                          decoration: BoxDecoration(
-                            color: Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(40 * fem),
-                          ),
-                          child: Center(
-                            // logobe4 (97:331)
-                            child: SizedBox(
-                              width: double.infinity,
-                              height: 80 * fem,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40 * fem),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                      'assets/page-1/images/logo-bg-RQY.png',
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Patrocinadores()),
+                            );
+                          },
+                          child: Container(
+                            width: 80 * fem,
+                            height: 80 * fem,
+                            decoration: BoxDecoration(
+                              color: Color(0xffffffff),
+                              borderRadius: BorderRadius.circular(40 * fem),
+                            ),
+                            child: Center(
+                              // logoskG (97:376)
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 80 * fem,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.circular(40 * fem),
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        'assets/page-1/images/logo-bg-nLU.png',
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -129,7 +169,7 @@ class EditarPatrocinador extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // autogrouphmauVUY (T2iSXVrjwgtPXVMTk9hMAU)
+                  // autogroupc6feyYQ (T2iQ2QMqcKBDxJg7aJc6FE)
                   padding:
                       EdgeInsets.fromLTRB(0 * fem, 19 * fem, 0 * fem, 0 * fem),
                   width: double.infinity,
@@ -137,55 +177,60 @@ class EditarPatrocinador extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // tipodeempresaoVE (97:317)
+                        // tipodeempresa5bS (97:362)
                         margin: EdgeInsets.fromLTRB(
-                            41 * fem, 0 * fem, 37 * fem, 13 * fem),
+                            41 * fem, 0 * fem, 37 * fem, 18 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            12 * fem, 15 * fem, 12 * fem, 13 * fem),
+                            12 * fem, 0 * fem, 12 * fem, 0 * fem),
                         width: double.infinity,
                         decoration: BoxDecoration(
                           border: Border.all(color: Color(0xffccc9c9)),
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Text(
-                          'Tipo de empresa',
-                          style: SafeGoogleFont(
-                            'Trebuchet MS',
+                        child: TextField(
+                          controller: tipoEmpresaController,
+                          decoration: InputDecoration(
+                            hintText: 'Tipo de Empresa',
+                            border: InputBorder.none,
+                          ),
+                          style: TextStyle(
                             fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w400,
                             height: 1.2575 * ffem / fem,
-                            color: Color(0xffc4c4c4),
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
                       Container(
-                        // autogroupwdkgFs2 (T2iSPRFsRBDAySfKCNWdkG)
+                        // autogroupwkhaLXN (T2iPvVN2TjVkpzZT2fwkhA)
                         margin: EdgeInsets.fromLTRB(
-                            39 * fem, 0 * fem, 39 * fem, 11 * fem),
+                            43 * fem, 0 * fem, 35 * fem, 11 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            14 * fem, 15 * fem, 14 * fem, 15 * fem),
+                            10 * fem, 0 * fem, 10 * fem, 0 * fem),
                         width: double.infinity,
                         height: 146 * fem,
                         decoration: BoxDecoration(
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(10 * fem),
                         ),
-                        child: Text(
-                          'Descrição',
-                          style: SafeGoogleFont(
-                            'Trebuchet MS',
+                        child: TextField(
+                          controller: descricaoController,
+                          decoration: InputDecoration(
+                            hintText: 'Descricao',
+                            border: InputBorder.none,
+                          ),
+                          style: TextStyle(
                             fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w400,
                             height: 1.2575 * ffem / fem,
-                            color: Color(0xffc4c4c4),
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
                       Container(
-                        // fotouwa (97:324)
                         margin: EdgeInsets.fromLTRB(
-                            138 * fem, 0 * fem, 130 * fem, 92 * fem),
+                            138 * fem, 0 * fem, 130 * fem, 86 * fem),
                         width: double.infinity,
                         height: 122 * fem,
                         decoration: BoxDecoration(
@@ -193,38 +238,82 @@ class EditarPatrocinador extends StatelessWidget {
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Foto',
-                            style: SafeGoogleFont(
-                              'Trebuchet MS',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.2575 * ffem / fem,
-                              color: Color(0xffc4c4c4),
-                            ),
-                          ),
+                        child: InkWell(
+                          onTap: () {
+                            _pickImage().then((value) {
+                              if (_image != null) {
+                                fotoController.text = _image!.path;
+                              }
+                            });
+                          },
+                          child: _image != null
+                              ? Image.file(
+                                  _image!,
+                                  fit: BoxFit.cover,
+                                )
+                              : Center(
+                                  child: Text(
+                                    'Foto',
+                                    style: TextStyle(
+                                      fontSize: 15 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.2575 * ffem / fem,
+                                      color: Color(0xffc4c4c4),
+                                    ),
+                                  ),
+                                ),
                         ),
                       ),
-                      Container(
-                        // botoadicionarpatrocinadorPLx (97:311)
-                        margin: EdgeInsets.fromLTRB(
-                            143 * fem, 0 * fem, 0 * fem, 14 * fem),
-                        width: 209 * fem,
-                        height: 43 * fem,
-                        decoration: BoxDecoration(
-                          color: Color(0xff03d061),
-                          borderRadius: BorderRadius.circular(30 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Editar patrocinador',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 16 * ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.2125 * ffem / fem,
-                              color: Color(0xffffffff),
+                      GestureDetector(
+                        onTap: () {
+                          if (nomeParceiroController.text.isNotEmpty &&
+                              tipoEmpresaController.text.isNotEmpty &&
+                              descricaoController.text.isNotEmpty &&
+                              fotoController.text.isNotEmpty) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Patrocinadores()),
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Falta preencher campos'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                        },
+                        child: Container(
+                          // botoadicionarpatrocinadorgDr (97:356)
+                          margin: EdgeInsets.fromLTRB(
+                              165 * fem, 0 * fem, 0 * fem, 15 * fem),
+                          width: 209 * fem,
+                          height: 43 * fem,
+                          decoration: BoxDecoration(
+                            color: Color(0xff03d061),
+                            borderRadius: BorderRadius.circular(30 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Editar patrocinador',
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 16 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),

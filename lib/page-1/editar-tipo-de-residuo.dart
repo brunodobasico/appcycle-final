@@ -6,9 +6,11 @@ import 'package:myapp/utils.dart';
 import 'package:myapp/imports.dart';
 
 class EditarResiduo extends StatelessWidget {
+  TextEditingController tipoResiduoController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 389;
+    double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
@@ -16,7 +18,7 @@ class EditarResiduo extends StatelessWidget {
         child: Container(
           width: double.infinity,
           child: Container(
-            // iphone14editartipoderesduoKQ8 (81:173)
+            // iphone14adicionartipoderesduox (70:167)
             width: double.infinity,
             decoration: BoxDecoration(
               color: Color(0xff98ff8f),
@@ -25,9 +27,9 @@ class EditarResiduo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  // autogroupzpn8Sje (T2iUMCKd41bfTPuzFdZpn8)
+                  // autogroupk23eUtk (T2iTPJm5e6ncLNdZoXk23e)
                   padding: EdgeInsets.fromLTRB(
-                      70 * fem, 10 * fem, 19 * fem, 77 * fem),
+                      39.5 * fem, 10 * fem, 19 * fem, 77 * fem),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0xff5db074),
@@ -36,34 +38,34 @@ class EditarResiduo extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        // logoxT6 (81:198)
+                        // logooAL (80:114)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 0 * fem, 5 * fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            width: 80 * fem,
-                            decoration: BoxDecoration(
-                              color: Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(40 * fem),
-                            ),
-                            child: Center(
-                              // logoGCt (81:200)
-                              child: SizedBox(
-                                width: double.infinity,
-                                height: 80 * fem,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(40 * fem),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/page-1/images/logo-bg-J8C.png',
-                                      ),
+                        width: 80 * fem,
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          borderRadius: BorderRadius.circular(40 * fem),
+                        ),
+                        child: Center(
+                          // logoujA (80:116)
+                          child: SizedBox(
+                            width: double.infinity,
+                            height: 80 * fem,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Tipo()),
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40 * fem),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      'assets/page-1/images/logo-bg-cFe.png',
                                     ),
                                   ),
                                 ),
@@ -72,21 +74,22 @@ class EditarResiduo extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        // editartipoderesduobkx (81:175)
-                        width: double.infinity,
-                        constraints: BoxConstraints(
-                          maxWidth: 249 * fem,
-                        ),
-                        child: Text(
-                          'Editar Tipo de \nresíduo',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Ubuntu',
-                            fontSize: 36 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.15 * ffem / fem,
-                            color: Color(0xffffffff),
+                      Center(
+                        child: Container(
+                          // adicionartipoderesduoDzk (70:169)
+                          constraints: BoxConstraints(
+                            maxWidth: 310 * fem,
+                          ),
+                          child: Text(
+                            'Editar Tipo de \nresíduo',
+                            textAlign: TextAlign.center,
+                            style: SafeGoogleFont(
+                              'Ubuntu',
+                              fontSize: 36 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.15 * ffem / fem,
+                              color: Color(0xffffffff),
+                            ),
                           ),
                         ),
                       ),
@@ -94,7 +97,7 @@ class EditarResiduo extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // autogroupuvnuhJC (T2iUZrdCBm7Re9baaLUVNU)
+                  // autogroupwj1aKnt (T2iTb3vWeoXrzav4yFWJ1A)
                   padding:
                       EdgeInsets.fromLTRB(0 * fem, 29 * fem, 0 * fem, 0 * fem),
                   width: double.infinity,
@@ -102,47 +105,77 @@ class EditarResiduo extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        // autogroupqk9zRV6 (T2iUUh78bJy6rYzMLbqk9z)
+                        // autogroupykey3it (T2iTW8u2ujEazE9KW9YkEY)
                         margin: EdgeInsets.fromLTRB(
-                            42.89 * fem, 0 * fem, 34.91 * fem, 148 * fem),
+                            43 * fem, 0 * fem, 35 * fem, 145 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            9.97 * fem, 13 * fem, 9.97 * fem, 15 * fem),
+                            10 * fem, 0 * fem, 10 * fem, 0 * fem),
                         width: double.infinity,
                         decoration: BoxDecoration(
                           border: Border.all(color: Color(0xffccc9c9)),
                           color: Color(0xfff8f8f8),
                           borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Text(
-                          'Nome do resíduo',
-                          style: SafeGoogleFont(
-                            'Trebuchet MS',
+                        child: TextField(
+                          controller: tipoResiduoController,
+                          decoration: InputDecoration(
+                            hintText: 'Novo nome do residuo',
+                            border: InputBorder.none,
+                          ),
+                          style: TextStyle(
                             fontSize: 15 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575 * ffem / fem,
-                            color: Color(0xffc4c4c4),
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
-                      Container(
-                        // botoadicionarresiduosbz (81:195)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 19 * fem, 258 * fem),
-                        width: 209 * fem,
-                        height: 43 * fem,
-                        decoration: BoxDecoration(
-                          color: Color(0xff03d061),
-                          borderRadius: BorderRadius.circular(30 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Editar Resíduo',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 20 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: Color(0xffffffff),
+                      GestureDetector(
+                        onTap: () {
+                          if (tipoResiduoController.text.isNotEmpty) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Tipo()),
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Nao pode ter campos vazios'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                        },
+                        child: Container(
+                          // botoadicionarresiduohYY (70:198)
+                          margin: EdgeInsets.fromLTRB(
+                              0 * fem, 0 * fem, 19 * fem, 261 * fem),
+                          width: 209 * fem,
+                          height: 43 * fem,
+                          decoration: BoxDecoration(
+                            color: Color(0xff03d061),
+                            borderRadius: BorderRadius.circular(30 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Editar Resíduo',
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),
