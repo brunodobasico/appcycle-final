@@ -128,7 +128,7 @@ class Info extends StatelessWidget {
                     children: [
                       Container(
                         height: 227.55 * fem,
-                        child: ListView(
+                        child: PageView(
                           scrollDirection: Axis.horizontal,
                           children: [
                             GestureDetector(
@@ -279,7 +279,7 @@ class Info extends StatelessWidget {
                 Container(
                   // iniciativasXvc (134:837)
                   margin: EdgeInsets.fromLTRB(
-                      22.94 * fem, 0 * fem, 26.93 * fem, 84 * fem),
+                      22.94 * fem, 0 * fem, 26.93 * fem, 104 * fem),
                   padding: EdgeInsets.fromLTRB(
                       13.86 * fem, 12.58 * fem, 9.6 * fem, 12.44 * fem),
                   width: double.infinity,
@@ -291,14 +291,96 @@ class Info extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // rectangle35ot8 (134:840)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
-                        width: double.infinity,
                         height: 227.55 * fem,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25 * fem),
-                          color: Color(0xfff8f8f8),
+                        child: PageView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                launch(
+                                    "https://www.canaln.tv/vila-real-combate-residuos-texteis-com-aposta-na-reciclagem-ou-partilha/");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/iniciativa1.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch(
+                                    "https://noticiasdevilareal.com/municipio-de-vila-real-vai-substituir-maquinas-de-recolha-de-embalagens/");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/iniciativa2.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch(
+                                    "https://www.publico.pt/2020/03/02/p3/noticia/vila-real-cria-projecto-reduzir-lixo-aumentar-economia-circular-1906079");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/iniciativa3.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch(
+                                    "https://www.eeagrants.gov.pt/pt/programas/ambiente/noticias/municipio-de-vila-real-comemora-dia-mundial-da-agua-com-a-apresentacao-das-estruturas-de-ecopontas-e-papachicletes/");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/iniciativa4.jpeg'),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                launch(
+                                    "https://essenciadoambiente.pt/eco-escolas-iniciativa-reciclar-nao-tem-historia/");
+                              },
+                              child: Container(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 0 * fem, 11.43 * fem),
+                                width: 227.55 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25 * fem),
+                                  color: Color(0xfff8f8f8),
+                                ),
+                                child: Image.asset(
+                                    'assets/page-1/images/iniciativa5.jpeg'),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Container(

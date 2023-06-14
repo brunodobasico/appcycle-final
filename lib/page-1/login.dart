@@ -82,22 +82,29 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  // esquecestedapalavragp4 (13:73)
-                  left: 39 * fem,
-                  top: 423 * fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 173 * fem,
-                      height: 18 * fem,
-                      child: Text(
-                        'Esqueces-te da palavra passe ',
-                        style: SafeGoogleFont(
-                          'Trebuchet MS',
-                          fontSize: 14 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2575 * ffem / fem,
-                          color: Color(0xff03d061),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EsquecerPassword()),
+                    );
+                  },
+                  child: Container(
+                    // esquecestedapalavragp4 (13:73)
+                    child: Align(
+                      child: SizedBox(
+                        width: 173 * fem,
+                        height: 18 * fem,
+                        child: Text(
+                          'Esqueces-te da palavra passe ',
+                          style: SafeGoogleFont(
+                            'Trebuchet MS',
+                            fontSize: 14 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.2575 * ffem / fem,
+                            color: Color(0xff03d061),
+                          ),
                         ),
                       ),
                     ),
@@ -166,12 +173,7 @@ class Login extends StatelessWidget {
                               width: double.infinity,
                               height: 45 * fem,
                               decoration: BoxDecoration(
-                                color: (_emailValid &&
-                                        _passwordValid &&
-                                        emailController.text.isNotEmpty &&
-                                        passwordController.text.isNotEmpty)
-                                    ? Color(0xff03d061)
-                                    : Colors.grey,
+                                color: Color(0xff03d061),
                                 borderRadius: BorderRadius.circular(27 * fem),
                                 boxShadow: [
                                   BoxShadow(

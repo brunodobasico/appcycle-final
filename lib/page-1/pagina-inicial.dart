@@ -48,14 +48,101 @@ class PaginaInicial extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // rectangle35CVr (33:202)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 11.88 * fem),
-                                width: double.infinity,
                                 height: 227.55 * fem,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25 * fem),
-                                  color: Color(0xfff8f8f8),
+                                child: PageView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch(
+                                            "https://www.canaln.tv/vila-real-combate-residuos-texteis-com-aposta-na-reciclagem-ou-partilha/");
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 0 * fem, 11.43 * fem),
+                                        width: 227.55 * fem,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25 * fem),
+                                          color: Color(0xfff8f8f8),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/page-1/images/iniciativa1.jpeg'),
+                                      ),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch(
+                                            "https://noticiasdevilareal.com/municipio-de-vila-real-vai-substituir-maquinas-de-recolha-de-embalagens/");
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 0 * fem, 11.43 * fem),
+                                        width: 227.55 * fem,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25 * fem),
+                                          color: Color(0xfff8f8f8),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/page-1/images/iniciativa2.jpeg'),
+                                      ),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch(
+                                            "https://www.publico.pt/2020/03/02/p3/noticia/vila-real-cria-projecto-reduzir-lixo-aumentar-economia-circular-1906079");
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 0 * fem, 11.43 * fem),
+                                        width: 227.55 * fem,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25 * fem),
+                                          color: Color(0xfff8f8f8),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/page-1/images/iniciativa3.jpeg'),
+                                      ),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch(
+                                            "https://www.eeagrants.gov.pt/pt/programas/ambiente/noticias/municipio-de-vila-real-comemora-dia-mundial-da-agua-com-a-apresentacao-das-estruturas-de-ecopontas-e-papachicletes/");
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 0 * fem, 11.43 * fem),
+                                        width: 227.55 * fem,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25 * fem),
+                                          color: Color(0xfff8f8f8),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/page-1/images/iniciativa4.jpeg'),
+                                      ),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch(
+                                            "https://essenciadoambiente.pt/eco-escolas-iniciativa-reciclar-nao-tem-historia/");
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 0 * fem, 11.43 * fem),
+                                        width: 227.55 * fem,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25 * fem),
+                                          color: Color(0xfff8f8f8),
+                                        ),
+                                        child: Image.asset(
+                                            'assets/page-1/images/iniciativa5.jpeg'),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Container(
@@ -105,7 +192,111 @@ class PaginaInicial extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // rectangle35Un8 (33:213)
+                                height: 227.55 * fem,
+                                child: PageView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(0 * fem,
+                                          0 * fem, 0 * fem, 10.76 * fem),
+                                      width: double.infinity,
+                                      height: 221.02 * fem,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(25 * fem),
+                                        color: Color(0xfff8f8f8),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Devido a, a Europa ser líder na produção de e-waste, e em Portugal a produção deste tipo de lixo, já atingiu o nível alarmante de 7 kg/pessoa/ano. ',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontFamily:
+                                                'Roboto', // Substitua 'Roboto' pela fonte desejada
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(0 * fem,
+                                          0 * fem, 0 * fem, 10.76 * fem),
+                                      width: double.infinity,
+                                      height: 221.02 * fem,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(25 * fem),
+                                        color: Color(0xfff8f8f8),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Apenas 20% do lixo eletrónico é reciclado e apenas uma fração dos metais preciosos, principalmente ouro, é recuperada. ',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontFamily:
+                                                'Roboto', // Substitua 'Roboto' pela fonte desejada
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(0 * fem,
+                                          0 * fem, 0 * fem, 10.76 * fem),
+                                      width: double.infinity,
+                                      height: 221.02 * fem,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(25 * fem),
+                                        color: Color(0xfff8f8f8),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Quanto ao lixo têxtil, 75% do que é produzido mundialmente é aterrado e incinerado, sendo que mais de 90% deste tipo de lixo é reutilizável e reciclável. Face a estes dados, o problema é muito fácil de identificar.',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontFamily:
+                                                'Roboto', // Substitua 'Roboto' pela fonte desejada
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                // autogroupf676KLg (T2i8nbFVV76hBZJemiF676)
+                                margin: EdgeInsets.fromLTRB(
+                                    15 * fem, 0 * fem, 8.6 * fem, 0 * fem),
+                                width: double.infinity,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      // iniciativasSAQ (134:845)
+                                      margin: EdgeInsets.fromLTRB(0 * fem,
+                                          0 * fem, 192.43 * fem, 0 * fem),
+                                      child: Text(
+                                        'Sabias que?',
+                                        style: SafeGoogleFont(
+                                          'Ubuntu',
+                                          fontSize: 13 * ffem,
+                                          fontWeight: FontWeight.w400,
+                                          height: 1.15 * ffem / fem,
+                                          color: Color(0xff000000),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          /* child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 0 * fem, 10.76 * fem),
                                 width: double.infinity,
@@ -113,6 +304,16 @@ class PaginaInicial extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25 * fem),
                                   color: Color(0xfff8f8f8),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Devido a, a Europa ser líder na produção de e-waste, e em Portugal a produção deste tipo de lixo, já atingiu o nível alarmante de 7 kg/pessoa/ano. ',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      //fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
                               ),
                               Container(
@@ -142,7 +343,7 @@ class PaginaInicial extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          ),
+                          ), */
                         ),
                       ),
                       Positioned(

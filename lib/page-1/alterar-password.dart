@@ -5,10 +5,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/imports.dart';
 
-class Definicoes extends StatelessWidget {
+class AlterarPassword extends StatelessWidget {
+  TextEditingController passwordAtualController = TextEditingController();
+  TextEditingController passwordNovaController = TextEditingController();
+  TextEditingController passwordConfirmarController = TextEditingController();
+  bool _passwordValid = true;
+
+  void _validatePassword() {
+    final password = passwordNovaController.text;
+    final hasUppercase = password.contains(RegExp(r'[A-Z]'));
+    final hasNumber = password.contains(RegExp(r'[0-9]'));
+    final isValid = hasUppercase && hasNumber;
+    _passwordValid = isValid;
+  }
+
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 391;
+    double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
@@ -16,7 +29,7 @@ class Definicoes extends StatelessWidget {
         child: Container(
           width: double.infinity,
           child: Container(
-            // iphone14definiesiJx (75:96)
+            // iphone14adicionartipoderesduox (70:167)
             width: double.infinity,
             decoration: BoxDecoration(
               color: Color(0xff98ff8f),
@@ -25,161 +38,68 @@ class Definicoes extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  // autogroupqeha3ME (T2ickTKj8Ud8QZocphQeHA)
+                  // autogroupk23eUtk (T2iTPJm5e6ncLNdZoXk23e)
+                  padding: EdgeInsets.fromLTRB(
+                      39.5 * fem, 10 * fem, 19 * fem, 77 * fem),
                   width: double.infinity,
-                  height: 242 * fem,
                   decoration: BoxDecoration(
                     color: Color(0xff5db074),
                   ),
-                  child: Stack(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Positioned(
-                        // logoBCY (75:98)
-                        left: 286 * fem,
-                        top: 16.2574462891 * fem,
+                      Container(
+                        // logooAL (80:114)
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 5 * fem),
+                        width: 80 * fem,
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          borderRadius: BorderRadius.circular(40 * fem),
+                        ),
+                        child: Center(
+                          // logoujA (80:116)
+                          child: SizedBox(
+                            width: double.infinity,
+                            height: 80 * fem,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => PaginaInicial()),
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40 * fem),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      'assets/page-1/images/logo-bg-cFe.png',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Center(
                         child: Container(
-                          width: 68 * fem,
-                          height: 67.74 * fem,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                // mapsmapu8Y (75:100)
-                                margin: EdgeInsets.fromLTRB(
-                                    2 * fem, 0 * fem, 0 * fem, 4.3 * fem),
-                                width: 55 * fem,
-                                height: 45.45 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/maps-map-aPE.png',
-                                  width: 55 * fem,
-                                  height: 45.45 * fem,
-                                ),
-                              ),
-                              Text(
-                                // appcycleQ5J (75:99)
-                                'App Cycle',
-                                textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Ubuntu',
-                                  fontSize: 15 * ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.15 * ffem / fem,
-                                  color: Color(0xff000000),
-                                ),
-                              ),
-                            ],
+                          // adicionartipoderesduoDzk (70:169)
+                          constraints: BoxConstraints(
+                            maxWidth: 310 * fem,
                           ),
-                        ),
-                      ),
-                      Positioned(
-                        // rectangle2458X6 (75:117)
-                        left: 0 * fem,
-                        top: 0 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 391 * fem,
-                            height: 242 * fem,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color(0xff5db074),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        // definiesSXn (75:120)
-                        left: 110 * fem,
-                        top: 91 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 183 * fem,
-                            height: 42 * fem,
-                            child: Text(
-                              'Definições',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Ubuntu',
-                                fontSize: 36 * ffem,
-                                fontWeight: FontWeight.w700,
-                                height: 1.15 * ffem / fem,
-                                color: Color(0xffffffff),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        // logo1hn (74:158)
-                        left: 294 * fem,
-                        top: 6 * fem,
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PaginaInicial()),
-                            );
-                          },
-                          child: Container(
-                            width: 92 * fem,
-                            height: 86 * fem,
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  // ellipse48MWk (74:159)
-                                  left: 0 * fem,
-                                  top: 0 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 85 * fem,
-                                      height: 85 * fem,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(42.5 * fem),
-                                          color: Color(0xffffffff),
-                                        ),
-                                        child: Image.asset(
-                                          'assets/page-1/images/logo-bg.png', // Substitua pelo caminho da imagem desejada
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  // logofnL (74:160)
-                                  left: 0 * fem,
-                                  top: 0 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 92 * fem,
-                                      height: 86 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/logo-mye.png',
-                                        width: 92 * fem,
-                                        height: 86 * fem,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        // settingsWRA (80:123)
-                        left: 148 * fem,
-                        top: 141 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 96 * fem,
-                            height: 96 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/settings.png',
-                              fit: BoxFit.contain,
+                          child: Text(
+                            'Alterar Password',
+                            textAlign: TextAlign.center,
+                            style: SafeGoogleFont(
+                              'Ubuntu',
+                              fontSize: 36 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.15 * ffem / fem,
+                              color: Color(0xffffffff),
                             ),
                           ),
                         ),
@@ -188,132 +108,178 @@ class Definicoes extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // autogroupdgukdEt (T2id1hPL4TD3z7npmGdgUk)
+                  // autogroupwj1aKnt (T2iTb3vWeoXrzav4yFWJ1A)
                   padding:
-                      EdgeInsets.fromLTRB(0 * fem, 16 * fem, 0 * fem, 0 * fem),
+                      EdgeInsets.fromLTRB(0 * fem, 29 * fem, 0 * fem, 0 * fem),
                   width: double.infinity,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        // frame4639j2 (139:858)
+                        // autogroupykey3it (T2iTW8u2ujEazE9KW9YkEY)
                         margin: EdgeInsets.fromLTRB(
-                            28 * fem, 0 * fem, 16 * fem, 16 * fem),
+                            43 * fem, 0 * fem, 35 * fem, 10 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            15.23 * fem, 5 * fem, 15.23 * fem, 4 * fem),
+                            10 * fem, 0 * fem, 10 * fem, 0 * fem),
                         width: double.infinity,
                         decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xffccc9c9)),
                           color: Color(0xfff8f8f8),
-                          borderRadius: BorderRadius.circular(20 * fem),
+                          borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Text(
-                          'Alterar nome de utilizador',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                        child: TextField(
+                          controller: passwordAtualController,
+                          decoration: InputDecoration(
+                            hintText: 'Password atual',
+                            border: InputBorder.none,
+                          ),
+                          obscureText: true,
+                          style: TextStyle(
+                            fontSize: 15 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.2575 * ffem / fem,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
                       Container(
-                        // frame464ooa (139:859)
+                        // autogroupykey3it (T2iTW8u2ujEazE9KW9YkEY)
                         margin: EdgeInsets.fromLTRB(
-                            28 * fem, 0 * fem, 16 * fem, 16 * fem),
+                            43 * fem, 0 * fem, 35 * fem, 10 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            15.23 * fem, 5 * fem, 15.23 * fem, 4 * fem),
+                            10 * fem, 0 * fem, 10 * fem, 0 * fem),
                         width: double.infinity,
                         decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xffccc9c9)),
                           color: Color(0xfff8f8f8),
-                          borderRadius: BorderRadius.circular(20 * fem),
+                          borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Text(
-                          'Alterar password',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                        child: TextField(
+                          controller: passwordNovaController,
+                          decoration: InputDecoration(
+                            hintText: 'Nova password',
+                            border: InputBorder.none,
+                          ),
+                          obscureText: true,
+                          onChanged: (value) {
+                            _validatePassword(); // Chamar a função de validação da senha
+                          },
+                          style: TextStyle(
+                            fontSize: 15 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.2575 * ffem / fem,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
-                      Container(
-                        // frame465gcU (139:860)
-                        margin: EdgeInsets.fromLTRB(
-                            28 * fem, 0 * fem, 16 * fem, 13 * fem),
-                        padding: EdgeInsets.fromLTRB(
-                            15.23 * fem, 5 * fem, 15.23 * fem, 4 * fem),
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Color(0xfff8f8f8),
-                          borderRadius: BorderRadius.circular(20 * fem),
-                        ),
-                        child: Text(
-                          'Cancelar uma recolha',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                      if (!_passwordValid)
+                        Text(
+                          'A senha deve conter uma letra maiúscula e um número.',
+                          style: TextStyle(
+                            color: Colors.red,
                           ),
                         ),
-                      ),
                       Container(
-                        // frame466xK6 (139:861)
+                        // autogroupykey3it (T2iTW8u2ujEazE9KW9YkEY)
                         margin: EdgeInsets.fromLTRB(
-                            28 * fem, 0 * fem, 16 * fem, 13 * fem),
+                            43 * fem, 0 * fem, 35 * fem, 145 * fem),
                         padding: EdgeInsets.fromLTRB(
-                            15.23 * fem, 5 * fem, 15.23 * fem, 4 * fem),
+                            10 * fem, 0 * fem, 10 * fem, 0 * fem),
                         width: double.infinity,
                         decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xffccc9c9)),
                           color: Color(0xfff8f8f8),
-                          borderRadius: BorderRadius.circular(20 * fem),
+                          borderRadius: BorderRadius.circular(9 * fem),
                         ),
-                        child: Text(
-                          'Eliminar post',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                        child: TextField(
+                          controller: passwordConfirmarController,
+                          decoration: InputDecoration(
+                            hintText: 'Confirmar nova password',
+                            border: InputBorder.none,
+                          ),
+                          obscureText: true,
+                          style: TextStyle(
+                            fontSize: 15 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.2575 * ffem / fem,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Admin()),
-                          );
+                          if (passwordAtualController.text.isNotEmpty &&
+                              passwordNovaController.text.isNotEmpty &&
+                              passwordConfirmarController.text.isNotEmpty &&
+                              passwordNovaController.text ==
+                                  passwordConfirmarController.text) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Definicoes()),
+                            );
+                          } else if (passwordNovaController.text !=
+                              passwordConfirmarController.text) {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Os campos nao coincidem'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text('Nao pode estar campos vazios'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Fechar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
                         },
                         child: Container(
+                          // botoadicionarresiduohYY (70:198)
                           margin: EdgeInsets.fromLTRB(
-                              28 * fem, 0 * fem, 16 * fem, 310 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              15.23 * fem, 5 * fem, 15.23 * fem, 4 * fem),
-                          width: double.infinity,
+                              0 * fem, 0 * fem, 19 * fem, 190 * fem),
+                          width: 209 * fem,
+                          height: 43 * fem,
                           decoration: BoxDecoration(
-                            color: Color(0xfff8f8f8),
-                            borderRadius: BorderRadius.circular(20 * fem),
+                            color: Color(0xff03d061),
+                            borderRadius: BorderRadius.circular(30 * fem),
                           ),
-                          child: Text(
-                            'Mudar para modo de Administrador',
-                            style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontSize: 20 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125 * ffem / fem,
-                              color: Color(0xff000000),
+                          child: Center(
+                            child: Text(
+                              'Alterar Password',
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),
                       ),
                       Container(
-                        //barra de navegacao
                         width: double.infinity,
                         height: 60 * fem,
                         decoration: BoxDecoration(
